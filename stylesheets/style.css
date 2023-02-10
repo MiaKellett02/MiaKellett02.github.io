@@ -63,8 +63,30 @@ img {
     padding: 10% 10% 10% 10%;
 }
 
+@media (max-width: 320px) {
+    #aboutMe { 
+        width: 75%;
+        margin: auto;
+        text-align: center; 
+        font-size: large;
+        color: rgb(255, 255, 255);
+        background-color: rgba(5, 5, 5, 0.623); 
+        padding-top: 1%;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+    #showReel{
+        /* max-width: 40%; */
+        margin: auto;
+        padding-bottom: 5%;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+}
+
+@media (max-width: 800000px) {
 #aboutMe { 
-    width: 40%;
+    width: 50%;
     margin: auto;
     text-align: center; 
     font-size: large;
@@ -83,3 +105,5 @@ img {
     padding-left: 2%;
     padding-right: 2%;
 }
+}
+
