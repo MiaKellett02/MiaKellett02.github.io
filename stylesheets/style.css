@@ -73,6 +73,7 @@ img {
     padding-top: 1%;
     padding-left: 2%;
     padding-right: 2%;
+    aspect-ratio: 5 / 1;
 }
 #showReel{
     /* max-width: 40%; */
