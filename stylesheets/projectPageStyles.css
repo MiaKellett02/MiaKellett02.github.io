@@ -1,0 +1,54 @@
+/* generic page styling */
+body {
+    text-align: center; 
+    background-color: rgb(55, 55, 55);
+    font-family: Arial, Helvetica, sans-serif;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+main {
+    text-align: center; 
+    background: rgb(55, 55, 55);
+    padding: 0 10% 0 10%;
+}
+footer {
+    text-align: center; 
+    color: rgb(255, 255, 255);
+    background: rgb(55, 55, 55);
+    padding: 0 10% 0 10%;
+}
+
+/* styling for images */
+#navLink {
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    max-width: 21.5%;
+}
+
+/* stylingSpecifically for the top of the page*/
+#socialLinks{
+    background-color: white;
+}
+
+#projectLinks{
+    background-color: azure;
+    max-width: fit-content;
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+}
+
+#projectTitle{
+    color: white;
+    font-size: xx-large;
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+}
