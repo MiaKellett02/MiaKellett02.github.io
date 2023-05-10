@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+
+<!-- Portfolio Site By Mia Kellett , Initial Commit Date: 20/10/2022.-->
+<html>
+    <head>
+        <title>
+            Missile Command
+        </title>
+        <link rel="stylesheet" href="../stylesheets/projectPageStyles.css">
+    </head>
+    <body>
+        <header>
+            <!--Any links for socials or to other pages on the site should be put here.-->
+            <div id="socialLinks">
+                <a href="../index.html"><img src="../Images/Icons/home.png" width="30" height="30" id="navLink"></a>
+                <a href="https://www.youtube.com/channel/UC6LQXoUdoJXaMjGHK7Y_Qbw" target="_blank"><img src="../Images/Icons/youtubeIcon.png" id="navLink"></a>
+                <a href="https://twitter.com/MiaKellett02" target="_blank"><img src="../Images/Icons/twitterIcon.png" id="navLink"></a>
+                <a href="https://www.linkedin.com/in/jack-kellett-9a9430208/" target="_blank"><img src="../Images/Icons/linkedInIcon.png" id="navLink"></a>
+                <a href="https://fastest-mia.itch.io/" target="_blank"><img src="../Images/Icons/itchIOIcon.png" id="navLink"></a>
+            </div>
+            
+            <!--Put the banner image for the page here.-->
+            <div 
+            id="headerBackground"
+            style="
+                justify-content: center;
+                align-items: center;
+                background-image: url(../Images/Banners/missileCommandBanner2.png);
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                padding: 25% 0% 0% 0%;">
+            <br>
+            </div>
+        </header>
+
+        <main>
+            <!--Put project title here.-->
+            <div id="projectTitle">
+                <h1>MISSILE COMMAND</h1>
+            </div>
+            
+
+            <article id="projectLinks">
+                <!--Put the project download and github links here.-->
+                <a href="https://fastest-mia.itch.io/missile-command" target="_blank">
+                    <img src="../Images/Icons/downloadHereButton.png"style="padding-right: 5%;" width="15%" height="auto">
+                </a>
+                <a href="https://github.com/JackKellett02/MissileCommandEngine" target="_blank">
+                    <img src="../Images/Icons/GithubRepoButton.png" width="15%" height="auto">
+                </a>
+            </article>
+            <br>
+            <br>
+            
+            <!--Any information about the project itself should be put inside of the following section.-->
+            <section id="projectInformation">
+                <article id="projectParagraph">
+                     <!--Put the summary of the project in this article.-->
+                     <p>
+                        This was a project for a module assignment in which we were required to create a 2D sprite-based game that is 
+                        a homage to a retro arcade game whilst using 2 software patters that we had been taught during the module.
+                        <br>
+                        <br>
+                        To decide what game I would like to recreate I started playing through a number of retro games before finally 
+                        deciding on the classic missile command.
+                     </p>
+                    <img src="../Images/ProjectScreenshots/missileCommandGameplay.png">
+                </article>
+                <br>
+                <br>
+                <article id="projectParagraph">
+                    <!--Put the summary of the project in this article.-->
+                    <p>
+                        To facilitate the engine I created a variety of systems to assist me in creating the gameplay logic for the game using 3 main software patterns, shown below:
+                    </p>
+                    <ol>
+                        <li>
+                            The singleton pattern. I used this for the base image handling classes for SDL so that I could ensure 
+                            I could always access it from anywhere and that only one class was handling the raw image processing.
+                        </li>
+                        <li>
+                            The command pattern. I used this for my input handling system. Each key in my input class could have a command mapped to it allowing me to easily handle input more. In addition, 
+                            this allowed for modifying the user interface in a much easier manner without many code changes.
+                        </li>
+                        <li>
+                            The prototype pattern. This pattern was used any game object that was required to be used or spawned multiple times, 
+                            such as the multitude of bombs that spawned. An inactive version of the bomb would be stored in a spawner class that 
+                            whenever I wanted a new bomb I would call a spawn function that would copy all of the bomb variables from the prototype to create a new one.
+                        </li>
+                    </ol>
+                    <img src="../Images/ProjectScreenshots/missileCommandMenu.png">
+                </article>
+                <br>
+                <br>
+                <article id="projectParagraph">
+                <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
+                <p>
+                    In summary, the main part of this project for me wasn't creating the gameplay logic for missile command because that could've been done in any existing engine and trying
+                    to do it without the proper tools made first would've made for a messy codebase.
+                    <br>
+                    <br>
+                    My main priority therefore for most of this project was to create clean, generic game object and engine manager classes I could use that I then simply had to call
+                    functons on those classes when writing the gameplay. Making for a way smoother development process and  making it a way cleaner and more maintainable codebase.
+                </p>
+                <img src="../Images/ProjectScreenshots/missileCommandTutorial.png">
+                </article>
+                <br>
+                <br>
+                <article id="projectWalkthrough">
+                   <!--Remove this if no project walkthrough is supplied.-->
+                    <div id="projectTitle">
+                        <h1>GAMEPLAY VIDEO</h1>
+                    </div>
+                    <br>
+                    <iframe src="https://www.youtube.com/embed/4OZtnSIBtoA" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <br><br><br>
+            <h3>GET IN TOUCH: jackkellett02@gmail.com</h3>
+            <p>This site is hosted with Github Pages..</p>
+        </footer>
+    </body>
+</html>
