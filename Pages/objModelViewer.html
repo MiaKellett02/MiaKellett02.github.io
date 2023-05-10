@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>
-            Example Page Title
+            Obj Model Viewer
         </title>
         <link rel="stylesheet" href="../stylesheets/projectPageStyles.css">
     </head>
@@ -25,7 +25,7 @@
             style="
                 justify-content: center;
                 align-items: center;
-                background-image: url(../Images/Banners/exampleBanner.png);
+                background-image: url(../Images/Banners/objModelViewerBanner.png);
                 background-size: 100% auto;
                 background-repeat: no-repeat;
                 padding: 25% 0% 0% 0%;">
@@ -36,16 +36,16 @@
         <main>
             <!--Put project title here.-->
             <div id="projectTitle">
-                <h1>EXAMPLE PROJECT TITLE</h1>
+                <h1>OBJ MODEL VIEWER</h1>
             </div>
             
 
             <article id="projectLinks">
                 <!--Put the project download and github links here.-->
-                <a href="" target="_blank">
+                <a href="https://fastest-mia.itch.io/obj-model-viewer" target="_blank">
                     <img src="../Images/Icons/downloadHereButton.png"style="padding-right: 5%;" width="15%" height="auto">
                 </a>
-                <a href="" target="_blank">
+                <a href="https://github.com/JackKellett02/OBJ_Model_Viewer" target="_blank">
                     <img src="../Images/Icons/GithubRepoButton.png" width="15%" height="auto">
                 </a>
             </article>
@@ -56,11 +56,15 @@
             <section id="projectInformation">
                 <article id="projectParagraph">
                      <!--Put the summary of the project in this article.-->
-                    <p>This is an example paragraph for this website in which I tasked myself with creating an example web page in which there is a list below.</p>
+                    <p>
+                        This was a project for a university assignment in which we were tasked with creating a model viewer/loader using C++ and OpenGL that could do the following:
+                    </p>
                     <ul>
-                        <li>Example point 1.</li>
-                        <li>Example point 2.</li>
-                        <li>Example point 3.</li>
+                        <li>Support loading 3D .OBJ models.</li>
+                        <li>Support OBJ .MTL material files.</li>
+                        <li>Use an event-system to handle window resizing events.</li>
+                        <li>Render a skybox.</li>
+                        <li>The camera that renders the scene must be movable around the scene.</li>
                     </ul>
                     <img src="../Images/ProjectScreenshots/obj_batman.png">
                 </article>
@@ -68,27 +72,32 @@
                 <br>
                 <article id="projectParagraph">
                     <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
+                    <img src="../Images/ProjectScreenshots/obj_tank.gif">
                     <p>
-                        This is an example sentence to be replaced when adding this into a proper page.
+                        When no .mtl (material) file is supplied to the renderer, a default material is supplied to the program.
                         <br>
                         <br>
-                        This is another set of words to be put into a sentence that you can replace with whatever sentence will be used in the actual paragraph to look like it should.
+                        This is a set of default values that tells the shader program what the model should look like, how it should be lit, and what colour it should be.
                         <br>
                         <br>
-                        This sentence could possibly be a final conclusion sentence going over some final options.
-                        For what happened or what the project is about or some final technical details.
+                        To add more interactivity to the model viewer, 
+                        I added a feature that allows the user to modify the default material values to any setting they choose, as seen above.
                     </p>
-                    <img src="../Images/ProjectScreenshots/obj_batman.png">
                 </article>
                 <br>
                 <br>
-                <article id="projectWalkthrough">
-                   <!--Remove this if no project walkthrough is supplied.-->
-                    <div id="projectTitle">
-                        <h1>WALKTHROUGH</h1>
-                    </div>
-                    <br>
-                   <video src="../Videos/SonicFootprintVideo.mp4" width="100%" height="auto" controls=""></video>
+                <article id="projectParagraph">
+                    <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
+                    <p>
+                        When the material file is loaded sometimes it may specify that textures are to be used on the model.
+                        <br>
+                        <br>
+                        When this is the case the program adds to the material that is being read from that a texture should be used whenever a mesh using that material is rendered.
+                        <br>
+                        <br>
+                        The texture data is then passed to the shader which then applies that colour to the current mesh being rendered.
+                    </p>
+                    <img src="../Images/ProjectScreenshots/obj_texturedMan.png">
                 </article>
             </section>
         </main>
