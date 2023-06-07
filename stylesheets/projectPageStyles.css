@@ -32,6 +32,7 @@ footer {
 /* stylingSpecifically for the top of the page*/
 #socialLinks{
     background-color: white;
+    align-items:  center;
 }
 
 #projectLinks{
@@ -90,7 +91,7 @@ footer {
     filter: brightness(65%);
 }
 
-@media (max-width: 960px) {
+@media (max-width: 1280px) {
     #projectLinks img{
         width: 49%;
         height: auto;
@@ -121,5 +122,5 @@ footer {
         /* max-width: 40%; */
         width: 100%;
         aspect-ratio: 16 / 9;
-}
+    }
 }
