@@ -96,7 +96,7 @@ img {
 }
 
 /* Mobile-specific styles */
-@media (max-width: 650px) {
+@media (max-width: 1280px) {
 
     /* styling for images */
     img {

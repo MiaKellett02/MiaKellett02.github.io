@@ -90,10 +90,14 @@ footer {
     filter: brightness(65%);
 }
 
-@media (max-width: 650px) {
+@media (max-width: 1280px) {
     #projectLinks img{
         width: 49%;
         height: auto;
+    }
+
+    #projectInformation{
+        width: 100%;
     }
 
     #projectParagraph{
