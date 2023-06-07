@@ -92,5 +92,6 @@ img {
 }
 
 .thumbnail:hover {
-    opacity: 0.2; /* Decrease the opacity to darken the image */
+    /*opacity: 0.5; /* Decrease the opacity to darken the image */
+    filter: brightness(65%);
 }
