@@ -107,6 +107,22 @@ img {
         max-width: 75%;
     }
 
+    #headerInfo {
+    
+        /* display: flex;
+        justify-content: space-between;
+        align-content: flex-start; */
+        justify-content: center;
+        align-items: center;
+    
+        background-image: url("../Images/Banners/whiteEagleDownBanner.png");
+        background-position-y: 80%;
+        background-size: cover;
+        background-repeat: no-repeat;
+        padding: 10% 10% 10% 10%;
+        width: 100%;
+    }
+
     #aboutMe { 
         width: 100%;
         text-align:left; 
