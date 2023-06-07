@@ -11,7 +11,10 @@ body {
 
 main {
     text-align: center; 
-    padding: 0 10% 0 10%;
+    padding-left: 5%;
+    padding-right: 5%;
+    padding-top: 5%;
+    padding-bottom: 5%;
     font-size: x-large;
 }
 footer {
@@ -34,6 +37,12 @@ footer {
     background-color: white;
     align-items:  center;
 }
+
+#navLink{
+    width: 1.5%;
+    height: auto;
+}
+
 
 #projectLinks{
     justify-content: center;
@@ -92,6 +101,13 @@ footer {
 }
 
 @media (max-width: 1280px) {
+    #navLink{
+        width: 8%;
+        height: auto;
+        padding-left: 2%;
+        padding-right: 2%;
+    }
+
     #projectLinks img{
         width: 49%;
         height: auto;
