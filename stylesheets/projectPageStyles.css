@@ -39,6 +39,11 @@ footer {
     align-items: center;
 }
 
+#projectLinks img{
+    width: 15%; 
+    height: auto;
+}
+
 #projectTitle{
     color: white;
     font-size: xx-large;
@@ -74,4 +79,43 @@ footer {
         /* max-width: 40%; */
         width: 60%;
         aspect-ratio: 16 / 9;
+}
+
+.thumbnail {
+    transition: opacity 0.3s; /* Add a smooth transition effect */
+}
+
+.thumbnail:hover {
+    /*opacity: 0.5; /* Decrease the opacity to darken the image */
+    filter: brightness(65%);
+}
+
+@media (max-width: 650px) {
+    #projectLinks img{
+        width: 49%;
+        height: auto;
+    }
+
+    #projectParagraph{
+        background-image: url("../Images/blackSquare.png");
+        color: white;
+        text-align: justify;
+        width: 100%;
+        padding: 1% 5% 1% 5%;
+        margin: auto;
+        display: block;
+    }
+
+    #projectWalkthrough {
+        background-color: rgb(20,20,20);
+        padding-bottom: 5%;
+        padding-left: 5%;
+        padding-right: 5%;
+    }
+
+    #projectWalkthrough iframe{
+        /* max-width: 40%; */
+        width: 100%;
+        aspect-ratio: 16 / 9;
+}
 }

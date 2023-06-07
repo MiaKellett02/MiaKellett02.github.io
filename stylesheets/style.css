@@ -20,26 +20,6 @@ footer {
     padding: 0 10% 0 10%;
 }
 
-#projects{
-    max-width: 100%;
-    width: auto;
-    height: auto;
-    margin: auto;
-    background: rgb(110, 110, 110);
-    padding-top: 2%;
-    padding-bottom: 2%;
-}
-
-/* styling for images */
-img {
-    padding-left: 1%;
-    padding-right: 1%;
-    padding-top: 1%;
-    padding-bottom: 1%;
-    max-width: 21.5%;
-}
-
-/* stylingSpecifically for the top of the page*/
 #socialLinks{
     background-color: white;
 }
@@ -57,6 +37,40 @@ img {
     background-size: cover;
     background-repeat: no-repeat;
     padding: 10% 10% 10% 10%;
+}
+
+#projectTitle{
+    color: white;
+    font-size: xx-large;
+
+}
+
+.thumbnail {
+    transition: opacity 0.3s; /* Add a smooth transition effect */
+}
+
+.thumbnail:hover {
+    /*opacity: 0.5; /* Decrease the opacity to darken the image */
+    filter: brightness(65%);
+}
+
+#projects{
+    max-width: 100%;
+    width: auto;
+    height: auto;
+    margin: auto;
+    background: rgb(110, 110, 110);
+    padding-top: 2%;
+    padding-bottom: 2%;
+}
+
+/* styling for images */
+img {
+    padding-left: 1%;
+    padding-right: 1%;
+    padding-top: 1%;
+    padding-bottom: 1%;
+    max-width: 21.5%;
 }
 
 #aboutMe { 
@@ -81,17 +95,34 @@ img {
     aspect-ratio: 16 / 9;
 }
 
-#projectTitle{
-    color: white;
-    font-size: xx-large;
+/* Mobile-specific styles */
+@media (max-width: 650px) {
 
-}
+    /* styling for images */
+    img {
+        padding-left: 1%;
+        padding-right: 1%;
+        padding-top: 1%;
+        padding-bottom: 1%;
+        max-width: 75%;
+    }
 
-.thumbnail {
-    transition: opacity 0.3s; /* Add a smooth transition effect */
-}
+    #aboutMe { 
+        width: 100%;
+        text-align:left; 
+        font-size: large;
+        color: rgb(255, 255, 255);
+        background-color: rgba(5, 5, 5, 0.623); 
+        padding-left: 5%;
+    }
 
-.thumbnail:hover {
-    /*opacity: 0.5; /* Decrease the opacity to darken the image */
-    filter: brightness(65%);
+    #showReel{
+        /* max-width: 40%; */
+        margin: auto;
+        width: 100%;
+        padding-bottom: 5%;
+        padding-left: 2%;
+        padding-right: 2%;
+        aspect-ratio: 16 / 9;
+    }
 }
