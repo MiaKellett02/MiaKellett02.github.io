@@ -4,7 +4,7 @@
 <html>
     <head>
         <title>
-            Example Page Title
+            Projectile Physics Simulation
         </title>
         <link rel="stylesheet" href="../stylesheets/projectPageStyles.css">
     </head>
@@ -36,7 +36,7 @@
         <main>
             <!--Put project title here.-->
             <div id="projectTitle">
-                <h1>EXAMPLE PROJECT TITLE</h1>
+                <h1>PROJECTILE PHYSICS SIMULATION</h1>
             </div>
             
 
@@ -55,59 +55,82 @@
             <!--Any information about the project itself should be put inside of the following section.-->
             <section id="projectInformation">
                 <article id="projectParagraph">
-                     <!--Put the summary of the project in this article.-->
-                    <p>
-                        For this assessment I was tasked with implementing a clay pidgeon style physics simulation within the Unity Game Engine.
-                        With the limitation that I could not use the built in physics and collision systems.
-                        The requirements were as follows:
-                    </p>
-                    <ul>
-                        <li>
-                            The target launcher will use random values to launch projectiles.
-                        </li>
-                        <li>
-                            Projectiles will behave under the laws of physics where gravity is the same as on earth.
-                        </li>
-                        <li>
-                            The "shooter" is automated and must calculate to fire to intercept the target projectile.
-                        </li>
-                        <li>
-                            There should be a basic User Interface in place that indicates the number of targets hit and the number of air speed of the target projectile in m/s.
-                        </li>
-                        <li>
-                            The simulation should run until the user presses the escape key to halt execution of the program.
-                        </li>
-                    </ul>
-                    <img src="../Images/ProjectScreenshots/projectilePhysicsTurret.png">
+                    <!--Put the summary of the project in this article.-->
+                    <div class="text-and-image-container">
+                        <p>
+                            Project Description:
+                            <br>
+                            <br>
+                            <!-- Put the summary of the project in this paragraph. -->
+                            For this assessment I was tasked with implementing a clay pidgeon style physics simulation within the Unity Game Engine.
+                            With the limitation that I could not use the built-in physics and collision systems.
+                        </p>
+                        <img src="../Images/ProjectScreenshots/projectilePhysicsTurret.png">
+                    </div>
+                    <br>
+                    <br>
+                    <div class="text-and-image-container">
+                        <img src="../Images/ProjectScreenshots/projectilePhysicsTurret.png">
+                        <ul>
+                            <p>
+                                The requirements for the assessment were as follows:
+                            </p>
+                            <li>
+                                The target launcher will use random values to launch projectiles.
+                            </li>
+                            <li>
+                                Projectiles will behave under the laws of physics where gravity is the same as on earth.
+                            </li>
+                            <li>
+                                The "shooter" is automated and must calculate to fire to intercept the target projectile.
+                            </li>
+                            <li>
+                                There should be a basic User Interface in place that indicates the number of targets hit and the number of air speed of the target projectile in m/s.
+                            </li>
+                            <li>
+                                The simulation should run until the user presses the escape key to halt execution of the program.
+                            </li>
+                        </ul>
+                    </div>
                 </article>
                 <br>
                 <br>
                 <article id="projectParagraph">
-                    <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
-                    <img src="../Images/ProjectScreenshots/projectilePhysicsCollision.png">
-                    <p>
-                        As we were required to use custom physics in this assessment the first thing I did was start to design a "projectile" class that has a velocity and acceleration.
-                        <br>
-                        <br>
-                        The base turret would, using a custom pseudo random number generator, determine a random place to fire the projectile.
-                        The "interceptor" turret then takes those values and plugs them into newton's equations of motion using the value the
-                        user specifies for how long the intercept should take.
-                    </p>
+                    <div class="text-and-image-container">
+                        <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
+                        <p>
+                            Basic Design:
+                            <br>
+                            <br>
+                            As we were required to use custom physics in this assessment the first thing I did was start to design a "projectile" class that has a velocity and acceleration.
+                            <br>
+                            <br>
+                            The base turret would, using a custom pseudo random number generator, determine a random place to fire the projectile.
+                            The "interceptor" turret then takes those values and plugs them into newton's equations of motion using the value the
+                            user specifies for how long the intercept should take.
+                        </p>
+                        <img src="../Images/ProjectScreenshots/projectilePhysicsCollision.png">
+                    </div>
                 </article>
                 <br>
                 <br>
                 <article id="projectParagraph">
-                    <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
-                    <p>
-                        The collision of the two projectiles is then determined by my custom collision system for spherical objects.
-                        In this system, each object is checked against every other spherical object and if their size is smaller than
-                        the distance between them then a collision has taken place.
-                        <br>
-                        <br>
-                        This system is not perfect as with many projectiles on screen, the collision checks would start to take up alot of processing power.
-                        However since in this simulation specifically there are only ever 2 projectiles on screen at a time this was not a concern for the project.
-                    </p>
-                    <img src="../Images/ProjectScreenshots/projectilePhysicsTurret2.png">
+                    <div class="text-and-image-container">
+                        <img src="../Images/ProjectScreenshots/projectilePhysicsTurret2.png">
+                        <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
+                        <p>
+                            Custom Collision system:
+                            <br>
+                            <br>
+                            The collision of the two projectiles is then determined by my custom collision system for spherical objects.
+                            In this system, each object is checked against every other spherical object and if their size is smaller than
+                            the distance between them then a collision has taken place.
+                            <br>
+                            <br>
+                            This system is not perfect as with many projectiles on screen, the collision checks would start to take up alot of processing power.
+                            However since in this simulation specifically there are only ever 2 projectiles on screen at a time this was not a concern for the project.
+                        </p>
+                    </div>
                 </article>
             </section>
         </main>
