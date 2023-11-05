@@ -55,54 +55,58 @@
             <!--Any information about the project itself should be put inside of the following section.-->
             <section id="projectInformation">
                 <article id="projectParagraph">
-                     <!--Put the summary of the project in this article.-->
-                     <p>
-                        This was a project for a module assignment in which we were required to create a 2D sprite-based game that is 
-                        a homage to a retro arcade game whilst using 2 software patters that we had been taught during the module.
-                        <br>
-                        <br>
-                        To decide what game I would like to recreate I started playing through a number of retro games before finally 
-                        deciding on the classic missile command.
-                     </p>
-                    <img src="../Images/ProjectScreenshots/missileCommandGameplay.png">
+                    <div class="text-and-image-container">
+                        <!--Put the summary of the project in this article.-->
+                        <p>
+                            This was a project for a module assignment in which we were required to create a 2D sprite-based game that is 
+                            a homage to a retro arcade game whilst using 2 software patters that we had been taught during the module.
+                            <br>
+                            <br>
+                            To decide what game I would like to recreate I started playing through a number of retro games before finally 
+                            deciding on the classic missile command.
+                        </p>
+                        <img src="../Images/ProjectScreenshots/missileCommandGameplay.png">
+                    </div>
                 </article>
                 <br>
                 <br>
                 <article id="projectParagraph">
-                    <!--Put the summary of the project in this article.-->
-                    <p>
-                        To facilitate the engine I created a variety of systems to assist me in creating the gameplay logic for the game using 3 main software patterns, shown below:
-                    </p>
-                    <ol>
-                        <li>
-                            The singleton pattern. I used this for the base image handling classes for SDL so that I could ensure 
+                    <div class="text-and-image-container">
+                        <!--Put the summary of the project in this article.-->
+                        <img src="../Images/ProjectScreenshots/missileCommandMenu.png">
+                        <p>
+                            To facilitate the engine I created a variety of systems to assist me in creating the gameplay logic for the game using 3 main software patterns, shown below:
+                            <br>
+                            <br>
+                            1. The singleton pattern: I used this for the base image handling classes for SDL so that I could ensure 
                             I could always access it from anywhere and that only one class was handling the raw image processing.
-                        </li>
-                        <li>
-                            The command pattern. I used this for my input handling system. Each key in my input class could have a command mapped to it allowing me to easily handle input more. In addition, 
-                            this allowed for modifying the user interface in a much easier manner without many code changes.
-                        </li>
-                        <li>
-                            The prototype pattern. This pattern was used any game object that was required to be used or spawned multiple times, 
+                            <br>
+                            <br>
+                            2. The command pattern: I used this for my input handling system. Each key in my input class could have a command mapped to it allowing me to 
+                            easily handle input. In addition, this allowed for modifying the user interface in a much easier manner without many code changes.
+                            <br>
+                            <br>
+                            3. The prototype pattern: This pattern was used any game object that was required to be used or spawned multiple times, 
                             such as the multitude of bombs that spawned. An inactive version of the bomb would be stored in a spawner class that 
                             whenever I wanted a new bomb I would call a spawn function that would copy all of the bomb variables from the prototype to create a new one.
-                        </li>
-                    </ol>
-                    <img src="../Images/ProjectScreenshots/missileCommandMenu.png">
+                        </p>
+                    </div>
                 </article>
                 <br>
                 <br>
                 <article id="projectParagraph">
-                <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
-                <p>
-                    In summary, the main part of this project for me wasn't creating the gameplay logic for missile command because that could've been done in any existing engine and trying
-                    to do it without the proper tools made first would've made for a messy codebase.
-                    <br>
-                    <br>
-                    My main priority therefore for most of this project was to create clean, generic game object and engine manager classes I could use that I then simply had to call
-                    functons on those classes when writing the gameplay. Making for a way smoother development process and  making it a way cleaner and more maintainable codebase.
-                </p>
-                <img src="../Images/ProjectScreenshots/missileCommandTutorial.png">
+                    <div class="text-and-image-container">
+                        <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
+                        <p>
+                            In summary, the main part of this project for me wasn't creating the gameplay logic for missile command because that could've been done in any existing engine and trying
+                            to do it without the proper tools made first would've made for a messy codebase.
+                            <br>
+                            <br>
+                            My main priority therefore for most of this project was to create clean, generic game object and engine manager classes I could use that I then simply had to call
+                            functons on those classes when writing the gameplay. Making for a way smoother development process and  making it a way cleaner and more maintainable codebase.
+                        </p>
+                        <img src="../Images/ProjectScreenshots/missileCommandTutorial.png">
+                    </div>
                 </article>
                 <br>
                 <br>

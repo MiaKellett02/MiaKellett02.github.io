@@ -55,49 +55,59 @@
             <!--Any information about the project itself should be put inside of the following section.-->
             <section id="projectInformation">
                 <article id="projectParagraph">
-                     <!--Put the summary of the project in this article.-->
-                    <p>
-                        This was a project for a university assignment in which we were tasked with creating a model viewer/loader using C++ and OpenGL that could do the following:
-                    </p>
-                    <ul>
-                        <li>Support loading 3D .OBJ models.</li>
-                        <li>Support OBJ .MTL material files.</li>
-                        <li>Use an event-system to handle window resizing events.</li>
-                        <li>Render a skybox.</li>
-                        <li>The camera that renders the scene must be movable around the scene.</li>
-                    </ul>
-                    <img src="../Images/ProjectScreenshots/obj_batman.png">
+                    <div class="text-and-image-container">
+                        <!--Put the summary of the project in this article.-->
+                        <p>
+                            This was a project for a university assignment in which we were tasked with creating a model viewer/loader using C++ and OpenGL that could do the following:
+                            <br>
+                            <br>
+                            - Support loading 3D .OBJ models.
+                            <br>
+                            - Support OBJ .MTL material files.
+                            <br>
+                            - Event-system to handle window resizing events.
+                            <br>
+                            - Render a skybox.
+                            <br>
+                            - The camera that renders the scene must be able to be moved around the scene by the user.
+                        </p>
+                        <img src="../Images/ProjectScreenshots/obj_batman.png">
+                    </div>
                 </article>
                 <br>
                 <br>
                 <article id="projectParagraph">
-                    <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
-                    <img src="../Images/ProjectScreenshots/obj_tank.gif">
-                    <p>
-                        When no .mtl (material) file is supplied to the renderer, a default material is supplied to the program.
-                        <br>
-                        <br>
-                        This is a set of default values that tells the shader program what the model should look like, how it should be lit, and what colour it should be.
-                        <br>
-                        <br>
-                        To add more interactivity to the model viewer, 
-                        I added a feature that allows the user to modify the default material values to any setting they choose, as seen above.
-                    </p>
+                    <div class="text-and-image-container">
+                        <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
+                        <img src="../Images/ProjectScreenshots/obj_tank.gif">
+                        <p>
+                            When no .mtl (material) file is supplied to the renderer, a default material is supplied to the program.
+                            <br>
+                            <br>
+                            This is a set of default values that tells the shader program what the model should look like, how it should be lit, and what colour it should be.
+                            <br>
+                            <br>
+                            To add more interactivity to the model viewer, 
+                            I added a feature that allows the user to modify the default material values to any setting they choose, as seen above.
+                        </p>
+                    </div>
                 </article>
                 <br>
                 <br>
                 <article id="projectParagraph">
-                    <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
-                    <p>
-                        When the material file is loaded sometimes it may specify that textures are to be used on the model.
-                        <br>
-                        <br>
-                        When this is the case the program adds to the material that is being read from that a texture should be used whenever a mesh using that material is rendered.
-                        <br>
-                        <br>
-                        The texture data is then passed to the shader which then applies that colour to the current mesh being rendered.
-                    </p>
-                    <img src="../Images/ProjectScreenshots/obj_texturedMan.png">
+                    <div class="text-and-image-container">
+                        <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
+                        <p>
+                            When the material file is loaded sometimes it may specify that textures are to be used on the model.
+                            <br>
+                            <br>
+                            When this is the case the program adds to the material that is being read from that a texture should be used whenever a mesh using that material is rendered.
+                            <br>
+                            <br>
+                            The texture data is then passed to the shader which then applies that colour to the current mesh being rendered.
+                        </p>
+                        <img src="../Images/ProjectScreenshots/obj_texturedMan.png">
+                    </div>
                 </article>
             </section>
         </main>
