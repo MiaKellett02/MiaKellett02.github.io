@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+
+<!-- Portfolio Site By Mia Kellett , Initial Commit Date: 20/10/2022.-->
+<html>
+    <head>
+        <title>
+            Occult Offensive
+        </title>
+        <link rel="stylesheet" href="../stylesheets/projectPageStyles.css">
+    </head>
+    <body>
+        <header>
+            <!--Any links for socials or to other pages on the site should be put here.-->
+            <div id="socialLinks">
+                <a href="../index.html"><img src="../Images/Icons/home.png" width="30" height="30" id="navLink"></a>
+                <a href="https://www.youtube.com/channel/UC6LQXoUdoJXaMjGHK7Y_Qbw" target="_blank"><img src="../Images/Icons/youtubeIcon.png" id="navLink"></a>
+                <a href="https://twitter.com/MiaKellett02" target="_blank"><img src="../Images/Icons/twitterIcon.png" id="navLink"></a>
+                <a href="https://www.linkedin.com/in/mia-kellett" target="_blank"><img src="../Images/Icons/linkedInIcon.png" id="navLink"></a>
+                <a href="https://fastest-mia.itch.io/" target="_blank"><img src="../Images/Icons/itchIOIcon.png" id="navLink"></a>
+            </div>
+            
+            <!--Put the banner image for the page here.-->
+            <div 
+            id="headerBackground"
+            style="
+                justify-content: center;
+                align-items: center;
+                background-image: url(../Images/Banners/OccultOffensiveBanner.png);
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                padding: 25% 0% 0% 0%;">
+            <br>
+            </div>
+        </header>
+
+        <main>
+            <!--Put project title here.-->
+            <div id="projectTitle">
+                <h1>Occult Offensive</h1>
+            </div>
+            
+
+            <article id="projectLinks">
+                <!--Put the project download and github links here.-->
+                <a href="https://thestaticvoids.itch.io/occult-offensive" target="_blank">
+                    <img class="thumbnail" src="../Images/Icons/PlayHereButton.png">
+                </a>
+                <a href="https://github.com/SkyeRiches/Occult-Tower-Defense" target="_blank">
+                    <img class="thumbnail" src="../Images/Icons/GithubRepoButton.png">
+                </a>
+            </article>
+            <br>
+            <br>
+            
+            <!--Any information about the project itself should be put inside of the following section.-->
+            <section id="projectInformation">
+                <article id="projectParagraph">
+                    <div class="text-and-image-container">
+                        <!--Put the summary of the project in this article.-->
+                        <p>
+                            In August 2022, our team of 6 participated in the Brackeys game jam with the theme "You're not alone.".
+                            We developed a cooperative tower defense game in unity, with one player managing towers using the mouse, 
+                            while the other controlled a 2D character with a gamepad to combat enemies. 
+                            This fit the theme by promoting cooperation between the players.
+                            <br>
+                            <br>
+                            We originally designed the game for web browsers, but during testing, we encountered issues with gamepad functionality 
+                            in the web-GL build. As a result, we decided to keep the web-GL version available for casual tower defense enthusiasts 
+                            while also offering a desktop build for players interested in the cooperative mode.
+                        </p>
+                        <img src="../Images/ProjectScreenshots/OccultOffensiveSplashScreen.png">
+                    </div>
+                </article>
+                <br>
+                <br>
+                <article id="projectParagraph">
+                    <div class="text-and-image-container">
+                        <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
+                        <img src="../Images/ProjectScreenshots/OccultOffensiveScreenshot_TurretsFiring.png">
+                        <p>
+                            My contributions to Occult Offensive included:
+                            <br>
+                            <br>
+                            - Enemies: Pathfinding, health and attacks.
+                            <br>
+                            - Enemy Wave Managment: including what types of enemies to spawn and what the spawn rate was.
+                            <br>
+                            - Audio Management: using triggers to play game music when entering the level and using C# game events to trigger sound effects.
+                            <br>
+                            - Player Towers: aiming, tower attacks and integration with tower shop that another team member made.
+                            <br>
+                            <br>
+                            In addition to these systems I also was heavily involved in the initial design of the game as well as helping
+                            other team members in debugging and getting other gameplay systems ready for the game jam deadline.
+                        </p>
+                    </div>
+                </article>
+                <br>
+                <br>
+                <br>
+                <br>
+                <article id="projectWalkthrough">
+                   <!--Remove this if no project walkthrough is supplied.-->
+                    <div id="projectTitle">
+                        <h1>WALKTHROUGH</h1>
+                    </div>
+                    <br>
+                    <iframe src="https://www.youtube.com/embed/qXQ9MEU0aIA?si=4mlkgczcgcFfUkoc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <div id="contact">
+                <h3 >
+                    GET IN TOUCH: miakellett02@gmail.com
+                </h3>
+                <p>
+                    This site is hosted with Github Pages..
+                    <br>
+                    <a href="https://github.com/MiaKellett02/MiaKellett02.github.io">Click here to view site source code.</a>
+                </p>
+            </div>
+            <br>
+            
+        </footer>
+    </body>
+</html>
