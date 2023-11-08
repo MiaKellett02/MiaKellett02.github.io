@@ -101,6 +101,13 @@ footer {
         aspect-ratio: 16 / 9;
 }
 
+
+#projectWalkthrough video{
+    /* max-width: 40%; */
+    width: 60%;
+    aspect-ratio: 16 / 9;
+}
+
 .thumbnail {
     transition: opacity 0.3s; /* Add a smooth transition effect */
 }
@@ -181,6 +188,12 @@ footer {
     }
 
     #projectWalkthrough iframe{
+        /* max-width: 40%; */
+        width: 100%;
+        aspect-ratio: 16 / 9;
+    }
+
+    #projectWalkthrough video{
         /* max-width: 40%; */
         width: 100%;
         aspect-ratio: 16 / 9;
