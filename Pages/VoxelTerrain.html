@@ -42,10 +42,10 @@
 
             <article id="projectLinks">
                 <!--Put the project download and github links here.-->
-                <a href="" target="_blank">
+                <!-- <a href="" target="_blank">
                     <img class="thumbnail" src="../Images/Icons/downloadHereButton.png">
-                </a>
-                <a href="" target="_blank">
+                </a> -->
+                <a href="https://github.com/MiaKellett02/Marching_Cubes_Terrain_Base" target="_blank">
                     <img class="thumbnail" src="../Images/Icons/GithubRepoButton.png">
                 </a>
             </article>
@@ -67,16 +67,15 @@
                     <div class="text-and-image-container">
                         <!--Put the summary of the project in this article.-->
                         <p>
-                            This is an example paragraph for this website in which I tasked myself with creating an example web page in which there is a list below
+                            This project was made for a module in which we were tasked with creating some form of procedural tool within the
+                            Unity Game Engine. We were required to make a video tutorial covering a topic of our choice within some form of procedural Generation
+                            (that was approved by the teachers).
                             <br>
                             <br>
-                            - Example point 1.
-                            <br>
-                            - Example point 2.
-                            <br>
-                            - Example point 3.
+                            Since this assignment was so vague it left alot of room to experiment with different procedural generation techniques before I finally
+                            landed on the marching cubes algorithm. A technique to generate voxel terrain.
                         </p>
-                        <img src="../Images/ProjectScreenshots/VoxelTerrain_ChunkGenerationScreenshot.png">
+                        <img src="../Images/ProjectScreenshots/VoxelTerrain_FinishedGeneration.png">
                     </div>
                 </article>
                 <br>
@@ -84,17 +83,42 @@
                 <article id="projectParagraph">
                     <div class="text-and-image-container">
                         <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
-                        <img src="../Images/ProjectScreenshots/obj_batman.png">
+                        <img src="../Images/ProjectScreenshots/VoxelTerrain_ChunkGenerationScreenshot.png">
                         <p>
-                            This is an example sentence to be replaced when adding this into a proper page.
+                            When deciding what I wanted to do for this assignment I knew I wanted to do some form of terrain generation, however I didn't
+                            want to do the simple adjusting a plain by a heightmap that so many terrains do. This led me into researching how voxel terrain generation
+                            (like Minecraft or games like Space Engineers).
                             <br>
                             <br>
-                            This is another set of words to be put into a sentence that you can replace with whatever sentence will be used in the actual paragraph to look like it should.
-                            <br>
-                            <br>
-                            This sentence could possibly be a final conclusion sentence going over some final options.
-                            For what happened or what the project is about or some final technical details.
+                            The best technique I found for this was the marching cubes algorithm. I won't get into the technical detail here (as I explain how
+                            it works in detail in the linked video), however I will say it was designed to convert medical scanning data into a 3D model that
+                            could then be visualised by a computer.
                         </p>
+                    </div>
+                </article>
+                <br>
+                <br>
+                <article id="projectParagraph">
+                    <div class="text-and-image-container">
+                        <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
+                        <p>
+                            Using all of these systems I designed a tool that allowed any developer or designer to
+                            add a script that would generate a fully 3-Dimensional terrain with chunks and multi-threading
+                            to speed up the generation of the terrain.
+                            <br>
+                            <br>
+                            To make it as designer friendly as possible I added the following features using unity custom editor scripts:
+                            <br>
+                            <br>
+                            1. Noise settings that affect the shape of the terrain.
+                            <br>
+                            2. Chunk settings that can effect how fast it generates.
+                            <br>
+                            3. Level of detail settings that affect how detailed the mesh will be.
+                            <br>
+                            4. Buttons to start generation of the level and destroy the level.
+                        </p>
+                        <img src="../Images/ProjectScreenshots/VoxelTerrain_UnityInspectorTool.png">
                     </div>
                 </article>
             </section>
