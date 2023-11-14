@@ -95,6 +95,7 @@ img {
     background-color: rgba(5, 5, 5, 0.623); 
     padding-top: 1%;
     padding-left: 2%;
+    padding-right: 2%;
     aspect-ratio: 5 / 1;
 }
 #showReel{
@@ -132,6 +133,7 @@ img {
         color: rgb(255, 255, 255);
         background-color: rgba(5, 5, 5, 0.623); 
         padding-left: 5%;
+        padding-right: 2%;
     }
 
     #showReel{
