@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+
+<!-- Portfolio Site By Mia Kellett , Initial Commit Date: 20/10/2022.-->
+<html>
+    <head>
+        <title>
+            Fromage Fortress
+        </title>
+        <link rel="stylesheet" href="../stylesheets/projectPageStyles.css">
+    </head>
+    <body>
+        <header>
+            <!--Any links for socials or to other pages on the site should be put here.-->
+            <div id="socialLinks">
+                <a href="../index.html"><img src="../Images/Icons/home.png" width="30" height="30" id="navLink"></a>
+                <a href="https://www.youtube.com/channel/UC6LQXoUdoJXaMjGHK7Y_Qbw" target="_blank"><img src="../Images/Icons/youtubeIcon.png" id="navLink"></a>
+                <a href="https://twitter.com/MiaKellett02" target="_blank"><img src="../Images/Icons/twitterIcon.png" id="navLink"></a>
+                <a href="https://www.linkedin.com/in/mia-kellett" target="_blank"><img src="../Images/Icons/linkedInIcon.png" id="navLink"></a>
+                <a href="https://fastest-mia.itch.io/" target="_blank"><img src="../Images/Icons/itchIOIcon.png" id="navLink"></a>
+                <a href="../Pages/CV-MiaKellett.pdf" target="_blank"><img src="../Images/Icons/CV_ICON.png" id="navLink"></a>
+            </div>
+            
+            <!--Put the banner image for the page here.-->
+            <div 
+            id="headerBackground"
+            style="
+                justify-content: center;
+                align-items: center;
+                background-image: url(../Images/Banners/FromageFortressBanner1.png);
+                background-size: 100% auto;
+                background-repeat: no-repeat;
+                padding: 25% 0% 0% 0%;">
+            <br>
+            </div>
+        </header>
+
+        <main>
+            <!--Put project title here.-->
+            <div id="projectTitle">
+                <h1>Fromage Fortress (WIP)</h1>
+            </div>
+            
+
+            <article id="projectLinks">
+                <!--Put the project download and github links here.-->
+                <a href="https://coldsoupstudios.itch.io/" target="_blank">
+                    <img class="thumbnail" src="../Images/Icons/downloadHereButton.png">
+                </a>
+                <!-- <a href="" target="_blank">
+                    <img class="thumbnail" src="../Images/Icons/GithubRepoButton.png">
+                </a> -->
+            </article>
+            <br>
+            <br>
+            <article id="projectWalkthrough">
+                <!--Remove this if no project walkthrough is supplied.-->
+                <!-- <div id="projectTitle">
+                    <h1>GAMEPLAY VIDEO</h1>
+                </div>
+                <br> -->
+                <iframe src="https://www.youtube.com/embed/sBIe5gv4PCo?si=NRuod4Ndlng8XDf3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe></article>
+            <br>
+            <br>
+            
+            <!--Any information about the project itself should be put inside of the following section.-->
+            <section id="projectInformation">
+                <article id="projectParagraph">
+                    <div class="text-and-image-container">
+                        <!--Put the summary of the project in this article.-->
+                        <p>
+                            This project was made as part of my final group project at University. For this assignment, we had free reign over what we made 
+                            so it was a great opportunity to make something we were proud of but also had creative control over. The only main requirement
+                            was that we treat it as though it would be a game we were going to release which we would then show at our Course Degree show "ComX".
+                            <br>
+                            <br>
+                            The game we came up with was 'FromageFortress', a game made in the Unity game engine. In this, the player is a cat and has to 
+                            stop hoards of mice from stealing the cheese in their owners fridge. Within the build phase of the game, players are able to place down 
+                            towers at different points within the level to deal with mice. Then when the player progresses into the combat phase, the mice starting 
+                            attacking and the player is able to walk up to and attack the mice in a 3rd person perspective. Making Fromage fortress a blend between 
+                            the tower-defence and wave-surival genres.
+                            <br>
+                            <br>
+                            After 2 months of development, we had the honour of being able to show off our prototype at Insomnia #72 in March 2024.
+                        </p>
+                        <img src="../Images/ProjectScreenshots/FromageFortressMainMenu_v2-4.gif">
+                    </div>
+                </article>
+                <br>
+                <br>
+                <article id="projectParagraph">
+                    <div class="text-and-image-container">
+                        <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
+                        <img src="../Images/ProjectScreenshots/FromageFortressBuildPhase2_v2-4.gif">
+                        <p>
+                            As designated project manager, I was responsible for making sure our team remained organised and achieved our goals on time.
+                            Using various project management solutions, such as HacknPlan and GitHub, as well as regular team meetings to keep everyone up to date.
+                            <br>
+                            <br>
+                            Also as a programmer, my main responsibilities were developing the following game systems:
+                            <br>
+                            1. The game manager that handled the build and combat phases. The wave manager was made in such a way that ever mice spawned in every wave 
+                            could be directly specified by designers.
+                            <br>
+                            2. The mice AI. These were made using a custom implementation of Behaviour Trees and Utility AI in C#. I made the nodes use scriptable objects 
+                            to expose all of the behavours to designers to make the mice AI easier for them to modify.
+                            <br>
+                            3. The health system, using a generic health script that could be applied to anything we want to be damageable. This system uses C# events to
+                            broadcast when the entity is damaged or killed. This allows other scripts to execute functions when those events happen whilst keeping the
+                            health script itself modular and free of unnecessary code.
+                            <br>
+                            4. The status effect system. Every entity that can be damaged can also have a status effect applied to them. Using a base class that contains
+                            functionality to initialise the effect as well as update it over time, it makes it easy to expand the pool of possible status effects.
+                            <br>
+                            5. The weapons system. Using a base weapon class, I was able to make it so that the player controller didn't have to care about
+                            what type of weapon it had, it just had to trigger it. Then by using Unity's scriptable objects for each weapon, designers would
+                            easily be able to create new weapons and modify their damage output and status effects.
+                            <br>
+                            6. The Player input using Unity's New Input system and then broadcasting the input to other scripts using C# events.
+                        </p>
+                    </div>
+                </article>
+                <br>
+                <br>
+                <article id="projectParagraph">
+                    <div class="text-and-image-container">
+                        <!--Put some more technical detail in this article (copy and past this article if more technical detail needs to be explained).-->
+                        <p>
+                            In addition to those systems, I also helped the other programmer debug his code as well as my code when needed. I also helped other team members 
+                            implementsmaller features that help add polish to the game, such as a results screen to give a player a score to show them how well they did. 
+                            By keeping my systems modular, the other programmer as well as animator were able to seamlessly intergrate their work with mine. 
+                            Helping smooth out development.
+                        </p>
+                        <img src="../Images/ProjectScreenshots/FromageFortressCombatPhase_v2-4.gif">
+                    </div>
+                </article>
+            </section>
+        </main>
+
+        <footer>
+            <div id="contact">
+                <h3 >
+                    GET IN TOUCH: miakellett02@gmail.com
+                </h3>
+                <p>
+                    This site is hosted with Github Pages..
+                    <br>
+                    <a href="https://github.com/MiaKellett02/MiaKellett02.github.io">Click here to view site source code.</a>
+                </p>
+            </div>
+            <br>
+            
+        </footer>
+    </body>
+</html>
