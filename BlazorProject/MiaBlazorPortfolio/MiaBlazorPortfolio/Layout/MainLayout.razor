@@ -1,4 +1,15 @@
 ﻿@inherits LayoutComponentBase
+
+@* Required *@
+@*<MudThemeProvider IsDarkMode/>
+<MudPopoverProvider />
+
+@* Needed for dialogs *@
+@*<MudDialogProvider />
+
+@* Needed for snackbars *@
+@*<MudSnackbarProvider />
+
 <div class="page">
     <div class="sidebar">
         <NavMenu />
@@ -13,4 +24,32 @@
             @Body
         </article>
     </main>
-</div>
+</div>*@
+
+<MudThemeProvider />
+
+<MudLayout>
+    <MudAppBar Elevation="1">
+        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+        <MudText Typo="Typo.h5" Class="ml-3">Application</MudText>
+        <MudSpacer />
+        <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
+    </MudAppBar>
+    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+        <NavMenu />
+    </MudDrawer>
+    <MudMainContent>
+        <h1 style="font-size: xx-large">FROM 05/12/2024: SITE IS WORK IN PROGRESS AND BEING PORTED TO USE THE BLAZOR FRAMEWORK</h1>
+        <br />
+        <br />
+        @Body
+    </MudMainContent>
+</MudLayout>
+@code {
+    bool _drawerOpen = true;
+
+    void DrawerToggle()
+    {
+        _drawerOpen = !_drawerOpen;
+    }
+}

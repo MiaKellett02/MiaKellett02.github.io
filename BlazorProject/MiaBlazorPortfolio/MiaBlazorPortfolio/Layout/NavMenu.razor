@@ -1,39 +1,8 @@
-﻿<div class="top-row ps-3 navbar navbar-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="">MiaBlazorPortfolio</a>
-        <button title="Navigation menu" class="navbar-toggler" @onclick="ToggleNavMenu">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-    </div>
-</div>
-
-<div class="@NavMenuCssClass nav-scrollable" @onclick="ToggleNavMenu">
-    <nav class="flex-column">
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="" Match="NavLinkMatch.All">
-                <span class="bi bi-house-door-fill-nav-menu" aria-hidden="true"></span> Home
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="counter">
-                <span class="bi bi-plus-square-fill-nav-menu" aria-hidden="true"></span> Counter
-            </NavLink>
-        </div>
-        <div class="nav-item px-3">
-            <NavLink class="nav-link" href="weather">
-                <span class="bi bi-list-nested-nav-menu" aria-hidden="true"></span> Weather
-            </NavLink>
-        </div>
-    </nav>
-</div>
-
-@code {
-    private bool collapseNavMenu = true;
-
-    private string? NavMenuCssClass => collapseNavMenu ? "collapse" : null;
-
-    private void ToggleNavMenu()
-    {
-        collapseNavMenu = !collapseNavMenu;
-    }
-}
+﻿<MudNavMenu>
+    <MudNavLink Href="">Home</MudNavLink>
+    <MudNavLink Href="https://www.youtube.com/channel/UC6LQXoUdoJXaMjGHK7Y_Qbw" target="_blank">YouTube</MudNavLink>
+    <MudNavLink Href="https://twitter.com/MiaKellett02" target="_blank">X(Formerly Twitter)</MudNavLink>
+    <MudNavLink Href="https://www.linkedin.com/in/mia-kellett" target="_blank">LinkedIn</MudNavLink>
+    <MudNavLink Href="https://fastest-mia.itch.io/" target="_blank">Itch</MudNavLink>
+    <MudNavLink Href="Pages/CV-MiaKellett.pdf" target="_blank">CV</MudNavLink>
+</MudNavMenu>
