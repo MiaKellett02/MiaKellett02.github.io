@@ -1,55 +1,87 @@
 ﻿@inherits LayoutComponentBase
+@inject NavigationManager navigationManager
+@inject PageManager pageManager
+
+<MudThemeProvider @bind-IsDarkMode="@_isDarkMode" Theme="_theme" />
 
 @* Required *@
-@*<MudThemeProvider IsDarkMode/>
 <MudPopoverProvider />
 
 @* Needed for dialogs *@
-@*<MudDialogProvider />
+<MudDialogProvider />
 
-@* Needed for snackbars *@
-@*<MudSnackbarProvider />
-
-<div class="page">
-    <div class="sidebar">
-        <NavMenu />
-    </div>
-
-    <main>
-        <div class="top-row px-4">
-            <a href="https://learn.microsoft.com/aspnet/core/" target="_blank">About</a>
-        </div>
-
-        <article class="content px-4">
-            @Body
-        </article>
-    </main>
-</div>*@
-
-<MudThemeProvider />
+@* Needed for snackbars*@
+<MudSnackbarProvider />
 
 <MudLayout>
-    <MudAppBar Elevation="1">
-        <MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
-        <MudText Typo="Typo.h5" Class="ml-3">Application</MudText>
-        <MudSpacer />
-        <MudIconButton Icon="@Icons.Material.Filled.MoreVert" Color="Color.Inherit" Edge="Edge.End" />
-    </MudAppBar>
-    <MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
-        <NavMenu />
-    </MudDrawer>
-    <MudMainContent>
-        <h1 style="font-size: xx-large">FROM 05/12/2024: SITE IS WORK IN PROGRESS AND BEING PORTED TO USE THE BLAZOR FRAMEWORK</h1>
+	<MudAppBar Elevation="1" Class="align-center">
+		<MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
+		@if (!onHomePage)
+		{
+			<MudNavLink Href="">
+				<MudImage Src="Images/Icons/home.png" Style="max-width:30px; filter:invert(1)" />
+			</MudNavLink>
+		}
+		<NavMenu />
+		<MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
+			<MudSwitch @bind-Value="_isDarkMode" Color="Color.Primary" Class="ma-4" T="bool" Label="Toggle Light/Dark Mode" />
+		</MudDrawer>
+	</MudAppBar>
+	<MudMainContent>
+		@*         <h1 style="font-size: xx-large">FROM 05/12/2024: SITE IS WORK IN PROGRESS AND BEING PORTED TO USE THE BLAZOR FRAMEWORK</h1>
         <br />
-        <br />
-        @Body
-    </MudMainContent>
+        <br /> *@
+		@Body
+	</MudMainContent>
+	<footer>
+		<MudContainer Class="d-flex flex-column align-items-center">
+			<MudSpacer />
+			<MudSpacer />
+			<MudText Typo="Typo.h6" Align="Align.Center">
+				GET IN TOUCH: miakellett02@gmail.com
+			</MudText>
+			<MudText Typo="Typo.body1" Align="Align.Center">
+				This site is hosted with Github Pages..
+				<br>
+				<MudLink Href="https://github.com/MiaKellett02/MiaKellett02.github.io/tree/Blazor" Target="_blank">Click here to view site source code.</MudLink>
+			</MudText>
+			<MudSpacer />
+		</MudContainer>
+	</footer>
 </MudLayout>
 @code {
-    bool _drawerOpen = true;
+	private MudTheme _theme = new();
+	private bool _isDarkMode = true;
+	private bool onHomePage = true;
+	bool _drawerOpen = false;
 
-    void DrawerToggle()
-    {
-        _drawerOpen = !_drawerOpen;
-    }
+	protected override void OnInitialized()
+	{
+		navigationManager.LocationChanged += LocationChanged;
+		StateHasChanged();
+	}
+
+	private void LocationChanged(object sender, LocationChangedEventArgs e)
+	{
+		Console.WriteLine("LocationHasChanged: " + e.Location);
+		onHomePage = e.Location == pageManager.GetHomeLocation();
+
+		if (onHomePage)
+		{
+			Console.WriteLine("On home page.");
+		}
+
+		StateHasChanged();
+	}
+
+	void DrawerToggle()
+	{
+		_drawerOpen = !_drawerOpen;
+	}
+
+
+	public void Dispose()
+	{
+		navigationManager.LocationChanged -= LocationChanged;
+	}
 }

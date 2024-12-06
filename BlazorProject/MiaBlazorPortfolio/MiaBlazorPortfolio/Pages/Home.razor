@@ -1,4 +1,6 @@
 ﻿@page "/"
+@inject PageManager pageManager
+@inject NavigationManager navigationManager
 
 <PageTitle>Home</PageTitle>
 
@@ -21,12 +23,12 @@
 </p>
 
 <iframe width="560" height="315"
-		style="aspect-ratio: 16/9; max-width: 50%; align-content: center"
-		src="https://www.youtube.com/embed/cmjbeM8soT4?si=ZsIWhDkqj7fDIegs"
-		title="YouTube video player"
-		frameborder="0"
-		allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-		allowfullscreen="">
+style="aspect-ratio: 16/9; max-width: 50%; align-content: center"
+src="https://www.youtube.com/embed/cmjbeM8soT4?si=ZsIWhDkqj7fDIegs"
+title="YouTube video player"
+frameborder="0"
+allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+allowfullscreen="">
 </iframe>
 
 <br />
@@ -40,29 +42,57 @@
 <section id="projects">
 	<!-- Example project line -->
 	<!-- ... -->
-	<a href="./Pages/FromageFortress.html"><img class="thumbnail" src="./Images/Thumbnails/FromageFortressCDCover.png"></a>
-	<a href="./Pages/SkullSluggery.html"><img class="thumbnail" src="./Images/Thumbnails/SkullSluggeryThumbnail.png"></a>
-	<a href="./Pages/OccultOffensive.html"><img class="thumbnail" src="./Images/Thumbnails/OccultOffensive.png"></a>
-	<a href="./Pages/VoxelTerrain.html"><img class="thumbnail" src="./Images/Thumbnails/VoxelTerrainGeneratorThumbnail.png"></a>
-	<br>
-	<a href="./Pages/ActionAdventureLevel.html"><img class="thumbnail" src="./Images/Thumbnails/ActionAdventureLevelThumbnail.png"></a>
-	<a href="./Pages/whiteEagleDown.html"><img class="thumbnail" src="./Images/Thumbnails/WhiteEagleDownThumbnail.png"></a>
-	<a href="./Pages/objModelViewer.html"><img class="thumbnail" src="./Images/Thumbnails/ObjModelViewerThumbnail.png"></a>
-	<a href="./Pages/missileCommand.html"><img class="thumbnail" src="./Images/Thumbnails/MissileCommandThumbnail.png"></a>
+	<MudNavMenu>
+		<MudNavLink Href="FromageFortress">
+			<img class="thumbnail" 
+			src="Images/Thumbnails/FromageFortressCDCover.png" 
+			style="width: 10vw; height: 10vw; object-fit: cover;">
+		</MudNavLink>
+		<MudNavLink Href="">
+			<img class="thumbnail" 
+			src="Images/Thumbnails/SkullSluggeryThumbnail.png" 
+			style="width: 10vw; height: 10vw; object-fit: cover;">
+		</MudNavLink>
+		<MudNavLink Href="">
+			<img class="thumbnail" 
+			src="Images/Thumbnails/OccultOffensive.png" 
+			style="width: 10vw; height: 10vw; object-fit: cover;">
+		</MudNavLink>
+		<MudNavLink Href="">
+			<img class="thumbnail" 
+			src="Images/Thumbnails/VoxelTerrainGeneratorThumbnail.png" 
+			style="width: 10vw; height: 10vw; object-fit: cover;">
+		</MudNavLink>
+
+		<br>
+
+		<MudNavLink Href="">
+			<img class="thumbnail" 
+			src="Images/Thumbnails/ActionAdventureLevelThumbnail.png" 
+			style="width: 10vw; height: 10vw; object-fit: cover;">
+		</MudNavLink>
+		<MudNavLink Href="">
+			<img class="thumbnail" 
+			src="Images/Thumbnails/WhiteEagleDownThumbnail.png" 
+			style="width: 10vw; height: 10vw; object-fit: cover;">
+		</MudNavLink>
+		<MudNavLink Href="">
+			<img class="thumbnail" 
+			src="Images/Thumbnails/ObjModelViewerThumbnail.png" 
+			style="width: 10vw; height: 10vw; object-fit: cover;">
+		</MudNavLink>
+		<MudNavLink Href="">
+			<img class="thumbnail" 
+			src="Images/Thumbnails/MissileCommandThumbnail.png" 
+			style="width: 10vw; height: 10vw; object-fit: cover;">
+		</MudNavLink>
+	</MudNavMenu>
 </section>
 
-<br />
-<br />
-<br />
-
-<div id="contact">
-	<h3>
-		GET IN TOUCH: miakellett02@gmail.com
-	</h3>
-	<p>
-		This site is hosted with Github Pages..
-		<br>
-		<a href="https://github.com/MiaKellett02/MiaKellett02.github.io">Click here to view site source code.</a>
-	</p>
-</div>
-<br>
+@code {
+	protected override void OnInitialized()
+	{
+		string homeLocation = navigationManager.Uri;
+		pageManager.SetHomeLocation(homeLocation);
+	}
+}

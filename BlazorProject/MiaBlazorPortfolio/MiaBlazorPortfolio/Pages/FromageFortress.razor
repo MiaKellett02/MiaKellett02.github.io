@@ -2,8 +2,91 @@
 
 <PageTitle>FromageFortress</PageTitle>
 
-<h1>Fromage Fortress</h1>
+@*Banner*@
+<div style="display: flex; justify-content: center;">
+	<MudImage Src="Images/Banners/FromageFortressBanner1.png" Alt="Fromage Fortress Banner" Style="width: 100%; max-height: auto; object-fit: cover;" />
+</div>
 
+@*Title*@
+<MudText Align="Align.Center" GutterBottom="true" Style="font-size: 3rem; font-family: 'YourFontFamily';">
+	Fromage Fortress
+</MudText>
+
+@*Download Link*@
+
+@*Video*@
+<div style="display: flex; justify-content: center;">
+	<iframe width="560" height="315"
+	style="aspect-ratio: 16/9; max-width: 75%;"
+	src="https://www.youtube.com/embed/N1ZueXROpXg?si=v8r6prsYpu07VpbE"
+	title="YouTube video player"
+	frameborder="0"
+	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
+	</iframe>
+</div>
+<br />
+<br />
+
+@*Page content*@
+<div style="display: flex; justify-content: center;">
+	<MudText Style="max-width: 75%; text-align: left;">
+		This project was made as part of my final group project at University in which
+		we were given the opportunity to make something we had full creative control
+		over to show at our Course Degree show "ComX". The game we came up with was
+		'FromageFortress', made in the Unity game engine, a game with a unique blend
+		between the tower-defence and wave-surival genres.The player is a cat that has
+		to stop hoards of mice from stealing cheese in their fridge. Within the build
+		phase players are able to place down towers to deal with mice. Then in the combat
+		phase the mice starting attacking, testing the player's defences and skills.
+		<br />
+		<br />
+		After 2 months of development, we had the honour of being able to show off our prototype
+		at Insomnia #72 in March 2024.
+		<br />
+		<MudImage Src="Images/ProjectScreenshots/FromageFortressLevel1-Attacking.png" Style="max-width: 75%" />
+		<br />
+		<br />
+		<div style="display: flex; justify-content: center;">
+			<MudImage Src="Images/ProjectScreenshots/FromageFortressLevel2-Towers.png" Style="max-width: 50%; height: 300px;" />
+			<div>
+				As designated project manager, I was responsible for making sure our team remained organised and achieved
+				our goals on time using the agile methodology.
+				<br />
+				<br />
+				As a programmer, my main responsibilities were developing the following game systems:
+				<br />
+				1. The game manager that handled the build and combat phases with designer friendly wave management.
+				<br />
+				2. The mice AI implementation using designer friendly Behaviour Trees and Utility AI in C#.
+				<br />
+				3. The health system, using a generic health script that could be applied to anything we want to be damageable.
+				<br />
+				4. A modular status effect system so that every entity that can be damaged can also have a status effect applied to them.
+				<br />
+				5. The weapons system that uses a base weapon class, making it easy to expand the number of weapons without the player script caring about their implementation.
+				<br />
+				6. The Player input using Unity's New Input system and then broadcasting the input to other scripts using C# events.
+			</div>
+		</div>
+		<br />
+		<br />
+		<div style="display: flex; justify-content: center;">
+			<div>
+				In addition to those systems, I also helped the other programmer debug his code as well
+				as my code when needed. I also helped other team members implement smaller features that
+				help add polish to the game, such as a results screen to give a player a score to show
+				them how well they did. By keeping my systems modular, the other programmer as well as
+				animator were able to seamlessly integrate their work with mine. Helping smooth out development.
+			</div>
+			<MudImage Src="Images/ProjectScreenshots/FromageFortressLevel3-Running.png" Style="max-width: 50%;" />
+		</div>
+	</MudText>
+</div>
+
+@*Page code*@
 @code {
-
+	protected override void OnInitialized()
+	{
+		StateHasChanged();
+	}
 }
