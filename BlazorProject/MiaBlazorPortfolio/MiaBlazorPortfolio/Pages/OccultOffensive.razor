@@ -1,0 +1,91 @@
+﻿@page "/OccultOffensive"
+@inject PageManager pageManager
+@inject NavigationManager navigationManager
+
+<PageTitle>OccultOffensive</PageTitle>
+
+@*Banner*@
+<div style="display: flex; justify-content: center;">
+	<MudImage Src="Images/Banners/OccultOffensiveBanner.png" Alt="Fromage Fortress Banner" Style="width: 100%; max-height: auto; object-fit: cover;" />
+</div>
+
+@*Title*@
+<MudText Align="Align.Center" GutterBottom="true" Style="font-size: 3rem; font-family: 'YourFontFamily';">
+	Occult Offensive
+</MudText>
+
+@*Download Link*@
+<ProjectLinks pageName="@pageName" />
+<br />
+<br />
+
+@*Video*@
+<div style="display: flex; justify-content: center;">
+	<iframe width="560" height="315"
+			style="aspect-ratio: 16/9; max-width: 50%;"
+			src="https://www.youtube.com/embed/qXQ9MEU0aIA?si=l9ibFi7eLUgCloM3"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen>
+	</iframe>
+
+</div>
+<br />
+<br />
+
+@*Page content*@
+<div style="display: flex; justify-content: center;">
+	<MudText Style="max-width: 75%; text-align: left;">
+		<div style="display: flex; justify-content: center;">
+			<div style="padding-right: 5%">
+				In August 2022, our team of 6 participated in the Brackeys game jam with the theme "You're not alone.".
+				We developed a cooperative tower defense game in unity, with one player managing towers using the mouse,
+				while the other controlled a 2D character with a gamepad to combat enemies. This fit the theme by
+				promoting cooperation between the players.
+				<br />
+				<br />
+				We originally designed the game for web browsers, but during testing, we encountered issues with gamepad
+				functionality in the web-GL build. As a result, we decided to keep the web-GL version available for casual
+				tower defense enthusiasts while also offering a desktop build for players interested in the cooperative mode.
+			</div>
+			<br />
+			<MudImage Src="Images/ProjectScreenshots/OccultOffensiveSplashScreen.png" Style="max-width: 50%; height: 5%; padding-left 2%;" />
+		</div>
+		<br />
+		<br />
+		<div style="display: flex; justify-content: center;">
+			<MudImage Src="Images/ProjectScreenshots/OccultOffensiveScreenshot_TurretsFiring.png" Style="max-width: 50%; height: 5%; padding-right: 2%;" />
+			<br />
+			<div style="padding-left: 2%">
+				My contributions to Occult Offensive included:
+				<br />
+				1. Enemies: Pathfinding, health and attacks.
+				<br />
+				2. Enemy Wave Managment: including what types of enemies to spawn and what the spawn rate was.
+				<br />
+				3. Audio Management: using triggers to play game music when entering the level and using C# game events to trigger sound effects.
+				<br />
+				4. Player Towers: aiming, tower attacks and integration with a tower shop that another team member made.
+				<br />
+				In addition to these systems I also was heavily involved in the initial design of the game as well as
+				helping other team members in debugging and getting other gameplay systems ready for the game jam deadline.
+			</div>
+		</div>
+	</MudText>
+</div>
+
+@*Page code*@
+@code {
+	private string pageName = "";
+
+	protected override void OnInitialized()
+	{
+		//Get the page name.
+		Uri uri = new Uri(navigationManager.Uri);
+		pageName = uri.Segments.Last();
+
+		//Set that we're not on the home page.
+		pageManager.SetIsOnHomePage(false);
+		StateHasChanged();
+	}
+}

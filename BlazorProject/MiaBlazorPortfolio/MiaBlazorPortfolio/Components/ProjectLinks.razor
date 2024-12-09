@@ -1,0 +1,24 @@
+﻿@inject PageManager pageManager
+
+<div style="display: flex; justify-content: center;">
+	@*Only display the download and source code links if available.*@
+	@if (pageManager.PageDownloadLinks[pageName] != PageManager.NO_LINK)
+	{
+		<MudButton Href="@pageManager.PageDownloadLinks[pageName]" Target="_blank"
+		Style="margin-right: 2%; background-color:ghostwhite; color:black">
+			Download Here
+		</MudButton>
+	}
+	@if (pageManager.PageRepositories[pageName] != PageManager.NO_LINK)
+	{
+		<MudButton Href="@pageManager.PageRepositories[pageName]" Target="_blank"
+		Style="background-color:ghostwhite; color:black">
+			View Source Code
+		</MudButton>
+	}
+</div>
+
+@code{
+	[Parameter]
+	public string pageName { get; set; } = "";
+}

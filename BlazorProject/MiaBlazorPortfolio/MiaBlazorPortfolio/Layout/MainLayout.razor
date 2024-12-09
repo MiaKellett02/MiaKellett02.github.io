@@ -37,6 +37,8 @@
 		<MudContainer Class="d-flex flex-column align-items-center">
 			<MudSpacer />
 			<MudSpacer />
+			<br />
+			<br />
 			<MudText Typo="Typo.h6" Align="Align.Center">
 				GET IN TOUCH: miakellett02@gmail.com
 			</MudText>
@@ -64,7 +66,7 @@
 	private void LocationChanged(object sender, LocationChangedEventArgs e)
 	{
 		Console.WriteLine("LocationHasChanged: " + e.Location);
-		onHomePage = e.Location == pageManager.GetHomeLocation();
+		onHomePage = e.Location == pageManager.GetHomeLocation() || pageManager.GetIsOnHomePage();
 
 		if (onHomePage)
 		{

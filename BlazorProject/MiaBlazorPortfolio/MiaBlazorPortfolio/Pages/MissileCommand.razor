@@ -1,0 +1,119 @@
+﻿@page "/MissileCommand"
+@inject PageManager pageManager
+@inject NavigationManager navigationManager
+
+<PageTitle>MissileCommand</PageTitle>
+
+@*Banner*@
+<div style="display: flex; justify-content: center;">
+	<MudImage Src="Images/Banners/missileCommandBanner2.png" Alt="Missile Command Banner" Style="width: 100%; max-height: auto; object-fit: cover;" />
+</div>
+
+@*Title*@
+<MudText Align="Align.Center" GutterBottom="true" Style="font-size: 3rem; font-family: 'YourFontFamily';">
+	Missile Command
+</MudText>
+
+@*Download Link*@
+<ProjectLinks pageName="@pageName" />
+<br />
+<br />
+
+@*Video*@
+<div style="display: flex; justify-content: center;">
+	<iframe width="560" height="315"
+			style="aspect-ratio: 16/9; max-width: 50%;"
+			src="https://www.youtube.com/embed/4OZtnSIBtoA?si=j0Pob4XWktXCUgkR"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
+	</iframe>
+
+</div>
+<br />
+<br />
+
+@*Page content*@
+<div style="display: flex; justify-content: center;">
+	<MudText Style="max-width: 75%; text-align: left;">
+		<div style="display: flex; justify-content: center;">
+			<div style="padding-right: 5%">
+				This was a project for a module assignment in which we were 
+				required to create a 2D sprite-based game that is a homage 
+				to a retro arcade game whilst using 2 software patters 
+				that we had been taught during the module.
+				<br />
+				<br />
+				To decide what game I would like to recreate I started 
+				playing through a number of retro games before finally 
+				deciding on the classic missile command.
+			</div>
+			<br />
+			<MudImage Src="Images/ProjectScreenshots/missileCommandGameplay.png" Style="max-width: 50%; height: 5%; padding-left 2%;" />
+		</div>
+		<br />
+		<br />
+		<div style="display: flex; justify-content: center;">
+			<MudImage Src="Images/ProjectScreenshots/missileCommandMenu.png" Style="max-width: 50%; height: 5%; padding-right: 2%;" />
+			<br />
+			<div style="padding-left: 2%">
+				To facilitate the engine I created a variety of systems to 
+				assist me in creating the gameplay logic for the game 
+				using 3 main software patterns, shown below:
+				<br />
+				<br />
+				1. The singleton pattern: I used this for the base image handling 
+				classes for SDL so that I could ensure I could always access it 
+				from anywhere and that only one class was handling the raw image processing.
+				<br />
+				2. The command pattern: I used this for my input handling system. 
+				Each key in my input class could have a command mapped 
+				to it allowing me to easily handle input. In addition, 
+				this allowed for modifying the user interface in a much easier 
+				manner without many code changes.
+				<br />
+				3. The prototype pattern: This pattern was used any game object 
+				that was required to be used or spawned multiple times, such as 
+				the multitude of bombs that spawned. An inactive version of the 
+				bomb would be stored in a spawner class that whenever I wanted 
+				a new bomb I would call a spawn function that would copy all of 
+				the bomb variables from the prototype to create a new one.
+			</div>
+		</div>
+		<br />
+		<br />
+		<div style="display: flex; justify-content: center;">
+			<div style="padding-right: 5%">
+				In summary, the main part of this project for me wasn't creating 
+				the gameplay logic for missile command because that could've been 
+				done in any existing engine and trying to do it without the proper 
+				tools made first would've made for a messy codebase.
+				<br />
+				<br />
+				My main priority therefore for most of this project was to create clean, 
+				generic game object and engine manager classes I could use that I then 
+				simply had to call functons on those classes when writing the gameplay. 
+				Making for a way smoother development process and making it a way cleaner 
+				and more maintainable codebase.
+			</div>
+			<br />
+			<MudImage Src="Images/ProjectScreenshots/missileCommandTutorial.png" Style="max-width: 50%; height: 5%; padding-left 2%;" />
+		</div>
+	</MudText>
+</div>
+
+@*Page code*@
+@code {
+	private string pageName = "";
+
+	protected override void OnInitialized()
+	{
+		//Get the page name.
+		Uri uri = new Uri(navigationManager.Uri);
+		pageName = uri.Segments.Last();
+
+		//Set that we're not on the home page.
+		pageManager.SetIsOnHomePage(false);
+		StateHasChanged();
+	}
+}

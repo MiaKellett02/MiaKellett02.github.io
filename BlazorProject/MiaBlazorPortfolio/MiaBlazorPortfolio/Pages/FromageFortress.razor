@@ -1,4 +1,6 @@
 ﻿@page "/FromageFortress"
+@inject PageManager pageManager
+@inject NavigationManager navigationManager
 
 <PageTitle>FromageFortress</PageTitle>
 
@@ -13,16 +15,20 @@
 </MudText>
 
 @*Download Link*@
+<ProjectLinks pageName="@pageName" />
+<br />
+<br />
 
 @*Video*@
 <div style="display: flex; justify-content: center;">
 	<iframe width="560" height="315"
-	style="aspect-ratio: 16/9; max-width: 75%;"
-	src="https://www.youtube.com/embed/N1ZueXROpXg?si=v8r6prsYpu07VpbE"
-	title="YouTube video player"
-	frameborder="0"
-	allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
+			style="aspect-ratio: 16/9; max-width: 50%;"
+			src="https://www.youtube.com/embed/N1ZueXROpXg?si=v8r6prsYpu07VpbE"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
 	</iframe>
+
 </div>
 <br />
 <br />
@@ -30,25 +36,30 @@
 @*Page content*@
 <div style="display: flex; justify-content: center;">
 	<MudText Style="max-width: 75%; text-align: left;">
-		This project was made as part of my final group project at University in which
-		we were given the opportunity to make something we had full creative control
-		over to show at our Course Degree show "ComX". The game we came up with was
-		'FromageFortress', made in the Unity game engine, a game with a unique blend
-		between the tower-defence and wave-surival genres.The player is a cat that has
-		to stop hoards of mice from stealing cheese in their fridge. Within the build
-		phase players are able to place down towers to deal with mice. Then in the combat
-		phase the mice starting attacking, testing the player's defences and skills.
-		<br />
-		<br />
-		After 2 months of development, we had the honour of being able to show off our prototype
-		at Insomnia #72 in March 2024.
-		<br />
-		<MudImage Src="Images/ProjectScreenshots/FromageFortressLevel1-Attacking.png" Style="max-width: 75%" />
+		<div style="display: flex; justify-content: center;">
+			<div style="padding-right: 5%">
+				This project was made as part of my final group project at University in which
+				we were given the opportunity to make something we had full creative control
+				over to show at our Course Degree show "ComX". The game we came up with was
+				'FromageFortress', made in the Unity game engine, a game with a unique blend
+				between the tower-defence and wave-surival genres.The player is a cat that has
+				to stop hoards of mice from stealing cheese in their fridge. Within the build
+				phase players are able to place down towers to deal with mice. Then in the combat
+				phase the mice starting attacking, testing the player's defences and skills.
+				<br />
+				<br />
+				After 2 months of development, we had the honour of being able to show off our prototype
+				at Insomnia #72 in March 2024.
+			</div>
+			<br />
+			<MudImage Src="Images/ProjectScreenshots/FromageFortressLevel1-Attacking.png" Style="max-width: 50%; height: 5%; padding-left 2%;" />
+		</div>
 		<br />
 		<br />
 		<div style="display: flex; justify-content: center;">
-			<MudImage Src="Images/ProjectScreenshots/FromageFortressLevel2-Towers.png" Style="max-width: 50%; height: 300px;" />
-			<div>
+			<MudImage Src="Images/ProjectScreenshots/FromageFortressLevel2-Towers.png" Style="max-width: 50%; height: 5%; padding-right: 2%;" />
+			<br />
+			<div style="padding-left: 2%">
 				As designated project manager, I was responsible for making sure our team remained organised and achieved
 				our goals on time using the agile methodology.
 				<br />
@@ -71,22 +82,31 @@
 		<br />
 		<br />
 		<div style="display: flex; justify-content: center;">
-			<div>
+			<div style="padding-right: 5%">
 				In addition to those systems, I also helped the other programmer debug his code as well
 				as my code when needed. I also helped other team members implement smaller features that
 				help add polish to the game, such as a results screen to give a player a score to show
 				them how well they did. By keeping my systems modular, the other programmer as well as
 				animator were able to seamlessly integrate their work with mine. Helping smooth out development.
 			</div>
-			<MudImage Src="Images/ProjectScreenshots/FromageFortressLevel3-Running.png" Style="max-width: 50%;" />
+			<br />
+			<MudImage Src="Images/ProjectScreenshots/FromageFortressLevel3-Running.png" Style="max-width: 50%; height: 5%; padding-left 2%;" />
 		</div>
 	</MudText>
 </div>
 
 @*Page code*@
 @code {
+	private string pageName = "";
+
 	protected override void OnInitialized()
 	{
+		//Get the page name.
+		Uri uri = new Uri(navigationManager.Uri);
+		pageName = uri.Segments.Last();
+
+		//Set that we're not on the home page.
+		pageManager.SetIsOnHomePage(false);
 		StateHasChanged();
 	}
 }

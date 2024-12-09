@@ -1,0 +1,105 @@
+﻿@page "/VoxelTerrain"
+@inject PageManager pageManager
+@inject NavigationManager navigationManager
+
+<PageTitle>VoxelTerrain</PageTitle>
+
+@*Banner*@
+<div style="display: flex; justify-content: center;">
+	<MudImage Src="Images/Banners/VoxelTerrainBanner.png" Alt="Fromage Fortress Banner" Style="width: 100%; max-height: auto; object-fit: cover;" />
+</div>
+
+@*Title*@
+<MudText Align="Align.Center" GutterBottom="true" Style="font-size: 3rem; font-family: 'YourFontFamily';">
+	Voxel Terrain
+</MudText>
+
+@*Download Link*@
+<ProjectLinks pageName="@pageName" />
+<br />
+<br />
+
+@*Video*@
+<div style="display: flex; justify-content: center;">
+	<iframe width="560" height="315"
+			style="aspect-ratio: 16/9; max-width: 50%;"
+			src="https://www.youtube.com/embed/6n-ifbqpoHQ?si=X8tC2Sdqka_oNyRN"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
+	</iframe>
+</div>
+<br />
+<br />
+
+@*Page content*@
+<div style="display: flex; justify-content: center;">
+	<MudText Style="max-width: 75%; text-align: left;">
+		<div style="display: flex; justify-content: center;">
+			<div style="padding-right: 5%">
+				This project was made for a module in which we were tasked with creating some form of
+				procedural tool within the Unity Game Engine. We were required to make a video tutorial
+				covering a topic of our choice within some form of procedural Generation (that was approved by the teachers).
+				<br />
+				<br />
+				Since this assignment was so vague it left alot of room to experiment with different procedural generation
+				techniques before I finally landed on the marching cubes algorithm. A technique to generate voxel terrain.
+			</div>
+			<br />
+			<MudImage Src="Images/ProjectScreenshots/VoxelTerrain_FinishedGeneration.png" Style="max-width: 50%; height: 5%; padding-left 2%;" />
+		</div>
+		<br />
+		<br />
+		<div style="display: flex; justify-content: center;">
+			<MudImage Src="Images/ProjectScreenshots/VoxelTerrain_ChunkGenerationScreenshot.png" Style="max-width: 50%; padding-right: 2%;" />
+			<br />
+			<div style="padding-left: 2%">
+				When deciding what I wanted to do for this assignment I knew I wanted to do some form of terrain generation,
+				however I didn't want to do the simple adjusting a plain by a heightmap that so many terrains do.
+				This led me into researching how voxel terrain generation (like Minecraft or games like Space Engineers).
+				<br />
+				<br />
+				The best technique I found for this was the marching cubes algorithm. I won't get into the technical
+				detail here (as I explain how it works in detail in the linked video), however I will say it was designed
+				to convert medical scanning data into a 3D model that could then be visualised by a computer.
+			</div>
+		</div>
+		<br />
+		<br />
+		<div style="display: flex; justify-content: center;">
+			<div style="padding-right: 5%">
+				Using all of these systems I designed a tool that allowed any developer or designer to add a script that would
+				generate a fully 3-Dimensional terrain with chunks and multi-threading to speed up the generation of the terrain.
+				<br />
+				<br />
+				To make it as designer friendly as possible I added the following features using unity custom editor scripts:
+				<br />
+				1. Noise settings that affect the shape of the terrain.
+				<br />
+				2. Chunk settings that can effect how fast it generates.
+				<br />
+				3. Level of detail settings that affect how detailed the mesh will be.
+				<br />
+				4. Buttons to start generation of the level and destroy the level.
+			</div>
+			<br />
+			<MudImage Src="Images/ProjectScreenshots/VoxelTerrain_UnityInspectorTool.png" Style="padding-left 2%;" />
+		</div>
+	</MudText>
+</div>
+
+@*Page code*@
+@code {
+	private string pageName = "";
+
+	protected override void OnInitialized()
+	{
+		//Get the page name.
+		Uri uri = new Uri(navigationManager.Uri);
+		pageName = uri.Segments.Last();
+
+		//Set that we're not on the home page.
+		pageManager.SetIsOnHomePage(false);
+		StateHasChanged();
+	}
+}

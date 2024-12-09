@@ -1,0 +1,102 @@
+﻿@page "/OBJModelViewer"
+@inject PageManager pageManager
+@inject NavigationManager navigationManager
+
+<PageTitle>OBJModelViewer</PageTitle>
+
+@*Banner*@
+<div style="display: flex; justify-content: center;">
+	<MudImage Src="Images/Banners/objModelViewerBanner.png" Alt="OBJ Model Viewer Banner" Style="width: 100%; max-height: auto; object-fit: cover;" />
+</div>
+
+@*Title*@
+<MudText Align="Align.Center" GutterBottom="true" Style="font-size: 3rem; font-family: 'YourFontFamily';">
+	OBJ Model Viewer
+</MudText>
+
+@*Download Link*@
+<ProjectLinks pageName="@pageName" />
+<br />
+<br />
+
+@*Page content*@
+<div style="display: flex; justify-content: center;">
+	<MudText Style="max-width: 75%; text-align: left;">
+		<div style="display: flex; justify-content: center;">
+			<div style="padding-right: 5%">
+				This was a project for a university assignment in which we were
+				tasked with creating a model viewer/loader using C++ and
+				OpenGL that could do the following:
+				<br />
+				<br />
+				- Support loading 3D .OBJ models.
+				<br />
+				- Support OBJ .MTL material files.
+				<br />
+				- Event-system to handle window resizing events.
+				<br />
+				- Render a skybox.
+				<br />
+				- The camera that renders the scene must be able to be moved around the scene by the user.
+			</div>
+			<br />
+			<MudImage Src="Images/ProjectScreenshots/obj_batman.png" Style="max-width: 50%; padding-left 2%;" />
+		</div>
+		<br />
+		<br />
+		<div style="display: flex; justify-content: center;">
+			<MudImage Src="Images/ProjectScreenshots/obj_tank.gif" Style="max-width: 50%; height: 5%; padding-right: 2%;" />
+			<br />
+			<div style="padding-left: 2%">
+				When no .mtl (material) file is supplied to the renderer,
+				a default material is supplied to the program.
+				<br />
+				<br />
+				This is a set of default values that tells the
+				shader program what the model should look like,
+				how it should be lit, and what colour it should be.
+				<br />
+				<br />
+				To add more interactivity to the model viewer,
+				I added a feature that allows the user to modify
+				the default material values to any setting they
+				choose, as seen above.
+			</div>
+		</div>
+		<br />
+		<br />
+		<div style="display: flex; justify-content: center;">
+			<div style="padding-right: 5%">
+				When the material file is loaded sometimes it may 
+				specify that textures are to be used on the model.
+				<br />
+				<br />
+				When this is the case the program adds to the material 
+				that is being read from that a texture should be used
+				whenever a mesh using that material is rendered.
+				<br />
+				<br />
+				The texture data is then passed to the shader which then 
+				applies that colour to the current mesh being rendered.
+			</div>
+			<br />
+			<MudImage Src="Images/ProjectScreenshots/obj_texturedMan.png" Style="max-width: 50%; padding-left 2%;" />
+		</div>
+	</MudText>
+</div>
+
+@*Page code*@
+@code {
+	private string pageName = "";
+
+	protected override void OnInitialized()
+	{
+		//Get the page name.
+		Uri uri = new Uri(navigationManager.Uri);
+		pageName = uri.Segments.Last();
+
+		//Set that we're not on the home page.
+		pageManager.SetIsOnHomePage(false);
+		StateHasChanged();
+	}
+}

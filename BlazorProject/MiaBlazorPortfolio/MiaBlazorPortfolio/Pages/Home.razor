@@ -4,95 +4,106 @@
 
 <PageTitle>Home</PageTitle>
 
-<h1>ABOUT ME</h1>
-<p>
-	A games systems programmer having finished their final year of University.
-	They have proven their creative and technical ability during their placement and their studies,
-	having graduated with a first class dedgree.
+<MudText Style="max-width: 50%; text-align: center; margin: 0 auto;">
+	<h1>ABOUT ME</h1>
+</MudText>
+
+<MudText Style="max-width: 50%; text-align: left; margin: 0 auto;">
+
+	<p>
+		A games systems programmer having finished their final year of University.
+		They have proven their creative and technical ability during their placement and their studies,
+		having graduated with a first class dedgree.
+		<br />
+		<br />
+		12 months of experience, at the University Of Gloucestershire as a Research Intern,
+		creating applications across a variety of disciplines such as network programming, AI,
+		save data handling, custom input sytems, databases and web development.
+		<br />
+		<br />
+		Events Manager of the Nintendo Society at UoG during 2023-2024.
+		<br />
+		<br />
+		Strategy or creative games being a favourite of Mia's as they require you to think deeply to solve problems.
+	</p>
+
+</MudText>
+
+<MudText Style="max-width: 60%; text-align: center; margin: 0 auto; padding-top: 3%">
+	<iframe width="560" height="315"
+			style="aspect-ratio: 16/9; align-content: center; margin: 0 auto;"
+			src="https://www.youtube.com/embed/cmjbeM8soT4?si=ZsIWhDkqj7fDIegs"
+			title="YouTube video player"
+			frameborder="0"
+			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+			allowfullscreen="">
+	</iframe>
+</MudText>
+
+<MudText Style="max-width: 60%; text-align: center; margin: 0 auto;">
 	<br />
 	<br />
-	12 months of experience, at the University Of Gloucestershire as a Research Intern,
-	creating applications across a variety of disciplines such as network programming, AI,
-	save data handling, custom input sytems, databases and web development.
 	<br />
-	<br />
-	Events Manager of the Nintendo Society at UoG during 2023-2024.
-	<br />
-	<br />
-	Strategy or creative games being a favourite of Mia's as they require you to think deeply to solve problems.
-</p>
 
-<iframe width="560" height="315"
-style="aspect-ratio: 16/9; max-width: 50%; align-content: center"
-src="https://www.youtube.com/embed/cmjbeM8soT4?si=ZsIWhDkqj7fDIegs"
-title="YouTube video player"
-frameborder="0"
-allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-allowfullscreen="">
-</iframe>
+	<div id="projectTitle">
+		<h1>PROJECTS</h1>
+	</div>
 
-<br />
-<br />
-<br />
-
-<div id="projectTitle">
-	<h1>PROJECTS</h1>
-</div>
-
-<section id="projects">
-	<!-- Example project line -->
-	<!-- ... -->
-	<MudNavMenu>
-		<MudNavLink Href="FromageFortress">
-			<img class="thumbnail" 
-			src="Images/Thumbnails/FromageFortressCDCover.png" 
-			style="width: 10vw; height: 10vw; object-fit: cover;">
-		</MudNavLink>
-		<MudNavLink Href="">
-			<img class="thumbnail" 
-			src="Images/Thumbnails/SkullSluggeryThumbnail.png" 
-			style="width: 10vw; height: 10vw; object-fit: cover;">
-		</MudNavLink>
-		<MudNavLink Href="">
-			<img class="thumbnail" 
-			src="Images/Thumbnails/OccultOffensive.png" 
-			style="width: 10vw; height: 10vw; object-fit: cover;">
-		</MudNavLink>
-		<MudNavLink Href="">
-			<img class="thumbnail" 
-			src="Images/Thumbnails/VoxelTerrainGeneratorThumbnail.png" 
-			style="width: 10vw; height: 10vw; object-fit: cover;">
-		</MudNavLink>
-
-		<br>
-
-		<MudNavLink Href="">
-			<img class="thumbnail" 
-			src="Images/Thumbnails/ActionAdventureLevelThumbnail.png" 
-			style="width: 10vw; height: 10vw; object-fit: cover;">
-		</MudNavLink>
-		<MudNavLink Href="">
-			<img class="thumbnail" 
-			src="Images/Thumbnails/WhiteEagleDownThumbnail.png" 
-			style="width: 10vw; height: 10vw; object-fit: cover;">
-		</MudNavLink>
-		<MudNavLink Href="">
-			<img class="thumbnail" 
-			src="Images/Thumbnails/ObjModelViewerThumbnail.png" 
-			style="width: 10vw; height: 10vw; object-fit: cover;">
-		</MudNavLink>
-		<MudNavLink Href="">
-			<img class="thumbnail" 
-			src="Images/Thumbnails/MissileCommandThumbnail.png" 
-			style="width: 10vw; height: 10vw; object-fit: cover;">
-		</MudNavLink>
-	</MudNavMenu>
-</section>
+	<section id="projects">
+		<!-- Example project line -->
+		<!-- ... -->
+		<MudNavMenu Style="display: flex; justify-content: center; align-content: center;">
+			<MudNavLink Href="FromageFortress">
+				<img class="thumbnail"
+					 src="Images/Thumbnails/FromageFortressCDCover.png"
+					 style="width: 10vw; height: 10vw; object-fit: cover;">
+			</MudNavLink>
+			<MudNavLink Href="SkullSluggery">
+				<img class="thumbnail"
+					 src="Images/Thumbnails/SkullSluggeryThumbnail.png"
+					 style="width: 10vw; height: 10vw; object-fit: cover;">
+			</MudNavLink>
+			<MudNavLink Href="OccultOffensive">
+				<img class="thumbnail"
+					 src="Images/Thumbnails/OccultOffensive.png"
+					 style="width: 10vw; height: 10vw; object-fit: cover;">
+			</MudNavLink>
+			<MudNavLink Href="VoxelTerrain">
+				<img class="thumbnail"
+					 src="Images/Thumbnails/VoxelTerrainGeneratorThumbnail.png"
+					 style="width: 10vw; height: 10vw; object-fit: cover;">
+			</MudNavLink>
+			<br />
+			<br />
+			<MudNavLink Href="VietnamActionAdventure">
+				<img class="thumbnail"
+					 src="Images/Thumbnails/ActionAdventureLevelThumbnail.png"
+					 style="width: 10vw; height: 10vw; object-fit: cover;">
+			</MudNavLink>
+			<MudNavLink Href="WhiteEagleDown">
+				<img class="thumbnail"
+					 src="Images/Thumbnails/WhiteEagleDownThumbnail.png"
+					 style="width: 10vw; height: 10vw; object-fit: cover;">
+			</MudNavLink>
+			<MudNavLink Href="OBJModelViewer">
+				<img class="thumbnail"
+					 src="Images/Thumbnails/ObjModelViewerThumbnail.png"
+					 style="width: 10vw; height: 10vw; object-fit: cover;">
+			</MudNavLink>
+			<MudNavLink Href="MissileCommand">
+				<img class="thumbnail"
+					 src="Images/Thumbnails/MissileCommandThumbnail.png"
+					 style="width: 10vw; height: 10vw; object-fit: cover;">
+			</MudNavLink>
+		</MudNavMenu>
+	</section>
+</MudText>
 
 @code {
 	protected override void OnInitialized()
 	{
 		string homeLocation = navigationManager.Uri;
 		pageManager.SetHomeLocation(homeLocation);
+		pageManager.SetIsOnHomePage(true);
 	}
 }
