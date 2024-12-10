@@ -1,0 +1,65 @@
+﻿@if (browserInfo.IsDesktop.GetValueOrDefault())
+{
+	Console.WriteLine("Desktop detected.");
+
+	@if (IsYoutube)
+	{
+		<MudText Style="max-width: 60%; text-align: center; margin: 0 auto; padding-top: 3%">
+			<iframe width="560" height="315"
+					style="aspect-ratio: 16/9; align-content: center; margin: 0 auto;"
+					src="@Source"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen="">
+			</iframe>
+
+		</MudText>
+	}
+	else
+	{
+		<div style="display: flex; justify-content: center;">
+			<video style="aspect-ratio: 16/9; max-width: 50%;"
+				   src="Videos/Boneheads-Skull-Sluggery-Presentation-Trailer.mp4" controls>
+			</video>
+		</div>
+	}
+}
+else
+{
+	Console.WriteLine("Mobile detected.");
+	@if (IsYoutube)
+	{
+		<MudText Style="max-width: 90%; text-align: center; margin: 0 auto; padding-top: 3%">
+			<iframe width="560" height="315"
+					style="aspect-ratio: 16/9; align-content: center; margin: 0 auto;"
+					src="@Source"
+					title="YouTube video player"
+					frameborder="0"
+					allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+					allowfullscreen="">
+			</iframe>
+
+		</MudText>
+	}
+	else
+	{
+		<div style="display: flex; justify-content: center;">
+			<video style="aspect-ratio: 16/9; max-width: 80%;"
+				   src="@Source" controls>
+			</video>
+		</div>
+	}
+}
+
+
+@code {
+	[Parameter]
+	public bool IsYoutube { get; set; } = true;
+
+	[Parameter]
+	public string Source { get; set; } = "";
+
+	[Parameter]
+	public BrowserInfo browserInfo { get; set; }
+}

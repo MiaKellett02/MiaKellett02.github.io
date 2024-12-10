@@ -20,73 +20,60 @@
 <br />
 
 @*Video*@
-<div style="display: flex; justify-content: center;">
-	<video style="aspect-ratio: 16/9; max-width: 50%;"
-		   src="Videos/Boneheads-Skull-Sluggery-Presentation-Trailer.mp4" controls>
-	</video>
-</div>
+<BrowserDetect @bind-BrowserInfo="browserInfo" />
+<VideoDisplayer IsYoutube="false" Source="Videos/Boneheads-Skull-Sluggery-Presentation-Trailer.mp4" browserInfo="browserInfo" />
+
 <br />
 <br />
 
 @*Page content*@
-<div style="display: flex; justify-content: center;">
-	<MudText Style="max-width: 75%; text-align: left;">
-		<div style="display: flex; justify-content: center;">
-			<div style="padding-right: 5%">
-				Made by a group of final year students called "Boneheads" in 2022,
-				Skull-Sluggery is a 2.5D Isometric Roguelike about a rough, tough skeleton
-				boy fighting his way through 1980s arcade Purgatory.
-				<br />
-				<br />
-				The player must take on a host of enemies straight out of classic bootleg
-				arcade games with just a bubble gun, demonic powerups and a can-do attitude.
-				<br />
-				<br />
-				I was a second year contractor student working for "Boneheads" as part of my
-				module "professional awareness" in which I went through the experience of
-				preparing a CV, portfolio and then being interviewed by final year students
-				to work on their projects as a part-time contractor.
-			</div>
-			<br />
-			<MudImage Src="Images/ProjectScreenshots/SkullSluggeryScreenshotWithDefeatedGhosts.png" Style="max-width: 50%; height: 5%; padding-left 2%;" />
-		</div>
-		<br />
-		<br />
-		<div style="display: flex; justify-content: center;">
-			<MudImage Src="Images/ProjectScreenshots/SkullSluggeryInspectorAssets.png" Style="max-width: 50%; height: 5%; padding-right: 2%;" />
-			<br />
-			<div style="padding-left: 2%">
-				As part of my contract work I was asked by the team lead to work on backend systems for the game.
-				<br />
-				<br />
-				Which Included:
-				<br />
-				1. Audio Management System: In Boneheads, I collaborated with the programmers to develop a system
-				that allowed designers to add sound effects to trigger during in-game events, like player damage.
-				The system randomly selected and played a sound from the list, enhancing audio diversity and reducing repetition.
-				<br />
-				2. Menu Navigation System: A script I designed to add controller support to Unity's UI-based menus. Designers
-				attach it to menus and populate a list with menu items, including buttons and sliders. This simplifies menu setup,
-				enabling easy addition of controller support and sprite switching for button selection.
-			</div>
-		</div>
-		<br />
-		<br />
-		<div style="display: flex; justify-content: center;">
-			<div style="padding-right: 5%">
-				In addition to the work I did for Boneheads, I also attended their weekly scrum meetings in which I discussed the
-				tasks I had been given, how I was doing with them and if I encountered any issues I needed help with aswell as
-				discussing ideas for the game itself with the team.
-			</div>
-			<br />
-			<MudImage Src="Images/ProjectScreenshots/SkullSluggeryTitle.png" Style="max-width: 50%; height: 5%; padding-left 2%;" />
-		</div>
-	</MudText>
-</div>
+<ProjectParagraph browserInfo="@browserInfo" displayImageFirst="false" imageSource="Images/ProjectScreenshots/SkullSluggeryScreenshotWithDefeatedGhosts.png">
+	Made by a group of final year students called "Boneheads" in 2022,
+	Skull-Sluggery is a 2.5D Isometric Roguelike about a rough, tough skeleton
+	boy fighting his way through 1980s arcade Purgatory.
+	<br />
+	<br />
+	The player must take on a host of enemies straight out of classic bootleg
+	arcade games with just a bubble gun, demonic powerups and a can-do attitude.
+	<br />
+	<br />
+	I was a second year contractor student working for "Boneheads" as part of my
+	module "professional awareness" in which I went through the experience of
+	preparing a CV, portfolio and then being interviewed by final year students
+	to work on their projects as a part-time contractor.
+</ProjectParagraph>
+
+<br />
+<br />
+
+<ProjectParagraph browserInfo="@browserInfo" displayImageFirst="true" imageSource="Images/ProjectScreenshots/SkullSluggeryInspectorAssets.png">
+	As part of my contract work I was asked by the team lead to work on backend systems for the game.
+	<br />
+	<br />
+	Which Included:
+	<br />
+	1. Audio Management System: In Boneheads, I collaborated with the programmers to develop a system
+	that allowed designers to add sound effects to trigger during in-game events, like player damage.
+	The system randomly selected and played a sound from the list, enhancing audio diversity and reducing repetition.
+	<br />
+	2. Menu Navigation System: A script I designed to add controller support to Unity's UI-based menus. Designers
+	attach it to menus and populate a list with menu items, including buttons and sliders. This simplifies menu setup,
+	enabling easy addition of controller support and sprite switching for button selection.
+</ProjectParagraph>
+
+<br />
+<br />
+
+<ProjectParagraph browserInfo="@browserInfo" displayImageFirst="false" imageSource="Images/ProjectScreenshots/SkullSluggeryTitle.png">
+	In addition to the work I did for Boneheads, I also attended their weekly scrum meetings in which I discussed the
+	tasks I had been given, how I was doing with them and if I encountered any issues I needed help with aswell as
+	discussing ideas for the game itself with the team.
+</ProjectParagraph>
 
 @*Page code*@
 @code {
 	private string pageName = "";
+	private BrowserInfo browserInfo = new BrowserInfo();
 
 	protected override void OnInitialized()
 	{

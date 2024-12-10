@@ -1,21 +1,45 @@
-﻿<MudNavMenu Class="d-flex flex-row" Style="filter:invert(1);">
-	<MudNavLink Href="https://www.youtube.com/channel/UC6LQXoUdoJXaMjGHK7Y_Qbw" target="_blank">
-		<MudImage Src="Images/Icons/youtubeIcon.png" />
-	</MudNavLink>
-	<MudNavLink Href="https://twitter.com/MiaKellett02" target="_blank">
-		<MudImage Src="Images/Icons/twitterIcon.png" />
-	</MudNavLink>
-	<MudNavLink Href="https://www.linkedin.com/in/mia-kellett" target="_blank">
-		<MudImage Src="Images/Icons/linkedInIcon.png" />
-	</MudNavLink>
-	<MudNavLink Href="https://fastest-mia.itch.io/" target="_blank">
-		<MudImage Src="Images/Icons/itchIOIcon.png" />
-	</MudNavLink>
-	<MudNavLink Href="Pages/CV-MiaKellett.pdf" target="_blank">
-		<MudImage Src="Images/Icons/CV_ICON.png" Style="max-width:30px" />
-	</MudNavLink>
-</MudNavMenu>
+﻿@if (browserInfo.IsDesktop.GetValueOrDefault())
+{
+	<MudNavMenu Class="d-flex flex-row" Style="filter:invert(1);">
+		<MudNavLink Href="https://www.youtube.com/channel/UC6LQXoUdoJXaMjGHK7Y_Qbw" target="_blank">
+			<MudImage Src="Images/Icons/youtubeIcon.png" />
+		</MudNavLink>
+		<MudNavLink Href="https://twitter.com/MiaKellett02" target="_blank">
+			<MudImage Src="Images/Icons/twitterIcon.png" />
+		</MudNavLink>
+		<MudNavLink Href="https://www.linkedin.com/in/mia-kellett" target="_blank">
+			<MudImage Src="Images/Icons/linkedInIcon.png" />
+		</MudNavLink>
+		<MudNavLink Href="https://fastest-mia.itch.io/" target="_blank">
+			<MudImage Src="Images/Icons/itchIOIcon.png" />
+		</MudNavLink>
+		<MudNavLink Href="Pages/CV-MiaKellett.pdf" target="_blank">
+			<MudImage Src="Images/Icons/CV_ICON.png" Style="max-width:30px" />
+		</MudNavLink>
+	</MudNavMenu>
+}
+else
+{
+	<MudNavMenu Class="d-flex flex-row" Style="filter:invert(1);">
+		<MudNavLink Href="https://www.youtube.com/channel/UC6LQXoUdoJXaMjGHK7Y_Qbw" target="_blank">
+			<MudImage Src="Images/Icons/youtubeIcon.png" Style="max-width:20px" />
+		</MudNavLink>
+		<MudNavLink Href="https://twitter.com/MiaKellett02" target="_blank">
+			<MudImage Src="Images/Icons/twitterIcon.png" Style="max-width:20px" />
+		</MudNavLink>
+		<MudNavLink Href="https://www.linkedin.com/in/mia-kellett" target="_blank">
+			<MudImage Src="Images/Icons/linkedInIcon.png" Style="max-width:20px" />
+		</MudNavLink>
+		<MudNavLink Href="https://fastest-mia.itch.io/" target="_blank">
+			<MudImage Src="Images/Icons/itchIOIcon.png" Style="max-width:20px" />
+		</MudNavLink>
+		<MudNavLink Href="Pages/CV-MiaKellett.pdf" target="_blank">
+			<MudImage Src="Images/Icons/CV_ICON.png" Style="max-width:20px" />
+		</MudNavLink>
+	</MudNavMenu>
+}
 
 @code {
-
+	[Parameter]
+	public BrowserInfo browserInfo { get; set; } = null;
 }

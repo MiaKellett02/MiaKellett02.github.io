@@ -1,0 +1,69 @@
+﻿@*Used to format the project pages*@
+<div>
+	@if (browserInfo.IsDesktop.GetValueOrDefault())
+	{
+		@*Being viewed on desktop.*@
+		<div style="display: flex; justify-content: center;">
+			<MudText Style="max-width: 75%; text-align: left;">
+				<div style="display: flex; justify-content: center;">
+					@if (displayImageFirst)
+					{
+						<MudImage Src="@imageSource" Style="max-width: 50%; height: 5%; padding-left 2%;" />
+						<br />
+						<div style="padding-right: 5%">
+							@ChildContent
+						</div>
+					}
+					else
+					{
+						<div style="padding-right: 2%">
+							@ChildContent
+						</div>
+						<br />
+						<MudImage Src="@imageSource" Style="max-width: 50%; height: 5%; padding-right 2%;" />
+					}
+				</div>
+			</MudText>
+		</div>
+	}
+	else
+	{
+		@*Being viewed on mobile.*@
+		<div style="display: flex; justify-content: center;">
+			<MudText Style="max-width: 85%; text-align: left;">
+				<div style="justify-content: center;">
+					@if (displayImageFirst)
+					{
+						<MudImage Src="@imageSource" Style="max-width: 90%; height: 10%; padding-left 2%;" />
+						<br />
+						<div style="padding-right: 5%">
+							@ChildContent
+						</div>
+					}
+					else
+					{
+						<div style="padding-right: 2%">
+							@ChildContent
+						</div>
+						<br />
+						<MudImage Src="@imageSource" Style="max-width: 90%; height: 10%;padding-right 2%;" />
+					}
+				</div>
+			</MudText>
+		</div>
+	}
+</div>
+
+@code {
+	[Parameter]
+	public RenderFragment ChildContent { get; set; }
+
+	[Parameter]
+	public BrowserInfo browserInfo { get; set; }
+
+	[Parameter]
+	public bool displayImageFirst { get; set; } = false;
+
+	[Parameter]
+	public string imageSource { get; set; } = "";
+}

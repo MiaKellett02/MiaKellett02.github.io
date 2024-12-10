@@ -7,6 +7,9 @@
 @* Required *@
 <MudPopoverProvider />
 
+@*To get information about what browser is being used.*@
+<BrowserDetect @bind-BrowserInfo="browserInfo" />
+
 @* Needed for dialogs *@
 <MudDialogProvider />
 
@@ -18,11 +21,21 @@
 		<MudIconButton Icon="@Icons.Material.Filled.Menu" Color="Color.Inherit" Edge="Edge.Start" OnClick="@((e) => DrawerToggle())" />
 		@if (!onHomePage)
 		{
-			<MudNavLink Href="">
-				<MudImage Src="Images/Icons/home.png" Style="max-width:30px; filter:invert(1)" />
-			</MudNavLink>
+			if (browserInfo.IsDesktop.GetValueOrDefault())
+			{
+				<MudNavLink Href="">
+					<MudImage Src="Images/Icons/home.png" Style="max-width:30px; filter:invert(1)" />
+				</MudNavLink>
+			}
+			else
+			{
+				<MudNavLink Href="">
+					<MudImage Src="Images/Icons/home.png" Style="max-width:20px; filter:invert(1)" />
+				</MudNavLink>
+			}
 		}
-		<NavMenu />
+		<NavMenu browserInfo="@browserInfo"/>
+
 		<MudDrawer @bind-Open="_drawerOpen" ClipMode="DrawerClipMode.Always" Elevation="2">
 			<MudSwitch @bind-Value="_isDarkMode" Color="Color.Primary" Class="ma-4" T="bool" Label="Toggle Light/Dark Mode" />
 		</MudDrawer>
@@ -56,6 +69,8 @@
 	private bool _isDarkMode = true;
 	private bool onHomePage = true;
 	bool _drawerOpen = false;
+
+	private BrowserInfo browserInfo = new BrowserInfo();
 
 	protected override void OnInitialized()
 	{

@@ -20,84 +20,66 @@
 <br />
 
 @*Video*@
-<div style="display: flex; justify-content: center;">
-	<iframe width="560" height="315"
-			style="aspect-ratio: 16/9; max-width: 50%;"
-			src="https://www.youtube.com/embed/39D_Rq4Q5fU?si=u3qiv54H5QZe9LSe"
-			title="YouTube video player"
-			frameborder="0"
-			allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen="">
-	</iframe>
+<BrowserDetect @bind-BrowserInfo="browserInfo" />
+<VideoDisplayer IsYoutube="true" Source="https://www.youtube.com/embed/39D_Rq4Q5fU?si=u3qiv54H5QZe9LSe" browserInfo="browserInfo" />
 
-</div>
 <br />
 <br />
 
 @*Page content*@
-<div style="display: flex; justify-content: center;">
-	<MudText Style="max-width: 75%; text-align: left;">
-		<div style="display: flex; justify-content: center;">
-			<div style="padding-right: 5%">
-				This was for an assignment in a module called Level Design in which I was paired up with
-				another student to create a cohesive 2 level experience for an action-adventure game.
-				We were required to research, design and breakdown a concept for our levels and
-				document it in a wiki for the module tutors.
-				<br />
-				<br />
-				After we had finished the initial design phase, using node-diagrams, moodboards
-				and a top-down map, the development of the levels started. Using Unreal Engine 4
-				we developed our concepts into a fully-fledged level that we then playtested.
-				Using feedback from playtesting we then improved the levels based upon that
-				feedback before the final submission.
-			</div>
-			<br />
-			<MudImage Src="Images/ProjectScreenshots/ActionAdventureScreenshot-Level1-START.png" Style="max-width: 50%; height: 5%; padding-left 2%;" />
-		</div>
-		<br />
-		<br />
-		<div style="display: flex; justify-content: center;">
-			<MudImage Src="Images/ProjectScreenshots/ActionAdventureScreenshot-Level1-PROMPT.png" Style="max-width: 50%; height: 5%; padding-right: 2%;" />
-			<br />
-			<div style="padding-left: 2%">
-				For my team's game we decided to make our levels with the theme that you were a
-				pilot that crashlanded in a remote region of Vietnam with the ultimate goal of
-				reaching a large radio tower to call in support to evacuate yourself,
-				with secondary goals of disrupting enemy plans.
-				<br />
-				<br />
-				I was responsible for the first level in the project and decided I would treat it
-				like it was a tutorial level at the start of the theoretical game we were making
-				these levels for. Because of this I focussed on ensuring the combat and movement
-				mechancis package we were given as part of this module (Advanced Locomotion Sytem)
-				were taught to the player in a "do not tell" way. To do this, I only told the
-				player the very basic controls for a mechanic and then presented them with
-				a situation in which they could use it.
-			</div>
-		</div>
-		<br />
-		<br />
-		<div style="display: flex; justify-content: center;">
-			<div style="padding-right: 5%">
-				The pattern of teaching the player a mechanic and then presenting them with a
-				situation in which to use it continued throughout the level, culminating in
-				the final room in which the player was presented with a number of enemies that
-				they could use the stealth and combat mechanics to fight. Or the player could
-				just sneak and push boxes to create a path to escape the cavern
-				they had found themselves in.
-				<br />
-				<br />
-				Once the player exited this large cavern, they would find themselves in a
-				tunnel that would load them into the second level.
-			</div>
-			<br />
-			<MudImage Src="Images/ProjectScreenshots/ActionAdventureScreenshot-Level1-SHOOTING.png" Style="max-width: 50%; height: 5%; padding-left 2%;" />
-		</div>
-	</MudText>
-</div>
+<ProjectParagraph browserInfo="@browserInfo" displayImageFirst="false" imageSource="Images/ProjectScreenshots/ActionAdventureScreenshot-Level1-START.png">
+	This was for an assignment in a module called Level Design in which I was paired up with
+	another student to create a cohesive 2 level experience for an action-adventure game.
+	We were required to research, design and breakdown a concept for our levels and
+	document it in a wiki for the module tutors.
+	<br />
+	<br />
+	After we had finished the initial design phase, using node-diagrams, moodboards
+	and a top-down map, the development of the levels started. Using Unreal Engine 4
+	we developed our concepts into a fully-fledged level that we then playtested.
+	Using feedback from playtesting we then improved the levels based upon that
+	feedback before the final submission.
+</ProjectParagraph>
+
+<br />
+<br />
+
+<ProjectParagraph browserInfo="@browserInfo" displayImageFirst="true" imageSource="Images/ProjectScreenshots/ActionAdventureScreenshot-Level1-PROMPT.png">
+	For my team's game we decided to make our levels with the theme that you were a
+	pilot that crashlanded in a remote region of Vietnam with the ultimate goal of
+	reaching a large radio tower to call in support to evacuate yourself,
+	with secondary goals of disrupting enemy plans.
+	<br />
+	<br />
+	I was responsible for the first level in the project and decided I would treat it
+	like it was a tutorial level at the start of the theoretical game we were making
+	these levels for. Because of this I focussed on ensuring the combat and movement
+	mechancis package we were given as part of this module (Advanced Locomotion Sytem)
+	were taught to the player in a "do not tell" way. To do this, I only told the
+	player the very basic controls for a mechanic and then presented them with
+	a situation in which they could use it.
+</ProjectParagraph>
+
+<br />
+<br />
+
+<ProjectParagraph browserInfo="@browserInfo" displayImageFirst="false" imageSource="Images/ProjectScreenshots/ActionAdventureScreenshot-Level1-SHOOTING.png">
+	The pattern of teaching the player a mechanic and then presenting them with a
+	situation in which to use it continued throughout the level, culminating in
+	the final room in which the player was presented with a number of enemies that
+	they could use the stealth and combat mechanics to fight. Or the player could
+	just sneak and push boxes to create a path to escape the cavern
+	they had found themselves in.
+	<br />
+	<br />
+	Once the player exited this large cavern, they would find themselves in a
+	tunnel that would load them into the second level.
+</ProjectParagraph>
 
 @*Page code*@
 @code {
 	private string pageName = "";
+	private BrowserInfo browserInfo = new BrowserInfo();
 
 	protected override void OnInitialized()
 	{
